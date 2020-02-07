@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     @Override
     public void onNineGirdItemDeleted(int position, NineGridBean gridBean, NineGirdImageContainer imageContainer) {
         //编辑模式下，某张图片被删除后回调这里
-        Toast.makeText(this, "position=" + position + "图片被删除", Toast.LENGTH_SHORT).show();
+        selImageList.remove(position);
     }
 
     ArrayList<ImageItem> images = null;
