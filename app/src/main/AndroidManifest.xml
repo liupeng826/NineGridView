@@ -17,10 +17,8 @@
         </activity>
         <activity
             android:name=".CustomImagePreviewDelActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:parentActivityName=".MainActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
-
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImagePickerThemeFullScreen"/>
     </application>
 
 </manifest>

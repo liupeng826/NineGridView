@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.69
 # min_api: 14
-# pg_map_id: 9938294
+# pg_map_id: 47e866f
 android.support.v4.app.INotificationSideChannel$Stub -> android.support.v4.app.INotificationSideChannel$Stub:
     20:22:void <init>() -> <init>
     40:40:android.os.IBinder asBinder() -> asBinder
@@ -7029,6 +7029,7 @@ androidx.core.content.FileProvider -> androidx.core.content.FileProvider:
     java.lang.String[] COLUMNS -> c
     340:360:void <clinit>() -> <clinit>
     339:339:void <init>() -> <init>
+    417:418:android.net.Uri getUriForFile(android.content.Context,java.lang.String,java.io.File) -> a
     575:589:androidx.core.content.FileProvider$PathStrategy getPathStrategy(android.content.Context,java.lang.String) -> a
     795:815:int modeToMode(java.lang.String) -> a
     819:825:java.io.File buildPath(java.io.File,java.lang.String[]) -> a
@@ -7045,10 +7046,13 @@ androidx.core.content.FileProvider -> androidx.core.content.FileProvider:
     523:523:int update(android.net.Uri,android.content.ContentValues,java.lang.String,java.lang.String[]) -> update
 androidx.core.content.FileProvider$PathStrategy -> androidx.core.content.FileProvider$a:
     java.io.File getFileForUri(android.net.Uri) -> a
+    android.net.Uri getUriForFile(java.io.File) -> a
 androidx.core.content.FileProvider$SimplePathStrategy -> androidx.core.content.FileProvider$b:
-    java.util.HashMap mRoots -> a
+    java.util.HashMap mRoots -> b
+    java.lang.String mAuthority -> a
     700:702:void <init>(java.lang.String) -> <init>
     709:710:void addRoot(java.lang.String,java.io.File) -> a
+    728:730:android.net.Uri getUriForFile(java.io.File) -> a
     764:772:java.io.File getFileForUri(android.net.Uri) -> a
 androidx.core.content.PermissionChecker -> androidx.core.content.c:
     97:119:int checkPermission(android.content.Context,java.lang.String,int,int,java.lang.String) -> a
@@ -14090,6 +14094,7 @@ com.bumptech.glide.RequestManager -> com.bumptech.glide.g:
     154:153:void setRequestOptions(com.bumptech.glide.request.RequestOptions) -> a
     352:351:void onStart() -> a
     464:464:com.bumptech.glide.RequestBuilder load(java.lang.String) -> a
+    476:476:com.bumptech.glide.RequestBuilder load(android.net.Uri) -> a
     597:597:com.bumptech.glide.RequestBuilder as(java.lang.Class) -> a
     623:628:void clear(com.bumptech.glide.request.target.Target) -> a
     673:672:void track(com.bumptech.glide.request.target.Target,com.bumptech.glide.request.Request) -> a
@@ -14897,9 +14902,10 @@ com.bumptech.glide.load.engine.DecodePath -> com.bumptech.glide.load.engine.g:
 com.bumptech.glide.load.engine.DecodePath$DecodeCallback -> com.bumptech.glide.load.engine.g$a:
     com.bumptech.glide.load.engine.Resource onResourceDecoded(com.bumptech.glide.load.engine.Resource) -> a
 com.bumptech.glide.load.engine.DiskCacheStrategy -> com.bumptech.glide.load.engine.h:
-    com.bumptech.glide.load.engine.DiskCacheStrategy AUTOMATIC -> c
-    com.bumptech.glide.load.engine.DiskCacheStrategy NONE -> a
-    com.bumptech.glide.load.engine.DiskCacheStrategy DATA -> b
+    com.bumptech.glide.load.engine.DiskCacheStrategy DATA -> c
+    com.bumptech.glide.load.engine.DiskCacheStrategy AUTOMATIC -> d
+    com.bumptech.glide.load.engine.DiskCacheStrategy ALL -> a
+    com.bumptech.glide.load.engine.DiskCacheStrategy NONE -> b
     13:120:void <clinit>() -> <clinit>
     7:7:void <init>() -> <init>
     boolean decodeCachedData() -> a
@@ -17992,9 +17998,9 @@ com.isseiaoki.simplecropview.FreeCropImageView -> com.isseiaoki.simplecropview.F
     62:62:float access$702(com.isseiaoki.simplecropview.FreeCropImageView,float) -> access$702
     62:62:int access$800(com.isseiaoki.simplecropview.FreeCropImageView) -> access$800
     62:62:void access$900(com.isseiaoki.simplecropview.FreeCropImageView,android.graphics.drawable.Drawable) -> access$900
-    1942:1951:android.graphics.RectF applyInitialFrameRect(android.graphics.RectF) -> applyInitialFrameRect
-    1540:1548:void applyThumbnail(android.net.Uri) -> applyThumbnail
-    1259:1269:android.graphics.Rect calcCropRect(int,int) -> calcCropRect
+    1940:1949:android.graphics.RectF applyInitialFrameRect(android.graphics.RectF) -> applyInitialFrameRect
+    1538:1546:void applyThumbnail(android.net.Uri) -> applyThumbnail
+    1257:1267:android.graphics.Rect calcCropRect(int,int) -> calcCropRect
     568:594:android.graphics.RectF calcFrameRect(android.graphics.RectF) -> calcFrameRect
     562:564:android.graphics.RectF calcImageRect(android.graphics.RectF,android.graphics.Matrix) -> calcImageRect
     546:558:float calcScale(int,int,float) -> calcScale
@@ -18002,12 +18008,12 @@ com.isseiaoki.simplecropview.FreeCropImageView -> com.isseiaoki.simplecropview.F
     950:967:void checkScaleBounds() -> checkScaleBounds
     679:709:void checkTouchArea(float,float) -> checkTouchArea
     1157:1157:float constrain(float,float,float,float) -> constrain
-    1823:1823:com.isseiaoki.simplecropview.CropRequest crop(android.net.Uri) -> crop
-    1794:1794:io.reactivex.Single cropAsSingle(android.net.Uri) -> cropAsSingle
-    1812:1812:io.reactivex.Single cropAsSingle() -> cropAsSingle
-    1758:1780:void cropAsync(android.net.Uri,com.isseiaoki.simplecropview.callback.CropCallback) -> cropAsync
-    1783:1784:void cropAsync(com.isseiaoki.simplecropview.callback.CropCallback) -> cropAsync
-    1895:1915:android.graphics.Bitmap cropImage() -> cropImage
+    1821:1821:com.isseiaoki.simplecropview.CropRequest crop(android.net.Uri) -> crop
+    1792:1792:io.reactivex.Single cropAsSingle(android.net.Uri) -> cropAsSingle
+    1810:1810:io.reactivex.Single cropAsSingle() -> cropAsSingle
+    1756:1778:void cropAsync(android.net.Uri,com.isseiaoki.simplecropview.callback.CropCallback) -> cropAsync
+    1781:1782:void cropAsync(com.isseiaoki.simplecropview.callback.CropCallback) -> cropAsync
+    1893:1913:android.graphics.Bitmap cropImage() -> cropImage
     445:451:void drawCropFrame(android.graphics.Canvas) -> drawCropFrame
     386:442:void drawDebugInfo(android.graphics.Canvas) -> drawDebugInfo
     477:483:void drawFrame(android.graphics.Canvas) -> drawFrame
@@ -18015,17 +18021,17 @@ com.isseiaoki.simplecropview.FreeCropImageView -> com.isseiaoki.simplecropview.F
     509:517:void drawHandleShadows(android.graphics.Canvas) -> drawHandleShadows
     499:506:void drawHandles(android.graphics.Canvas) -> drawHandles
     454:474:void drawOverlay(android.graphics.Canvas) -> drawOverlay
-    1927:1938:android.graphics.RectF getActualCropRect() -> getActualCropRect
+    1925:1936:android.graphics.RectF getActualCropRect() -> getActualCropRect
     1207:1208:com.isseiaoki.simplecropview.animation.SimpleValueAnimator getAnimator() -> getAnimator
     1175:1178:android.graphics.Bitmap getBitmap() -> getBitmap
-    1676:1693:android.graphics.Bitmap getCircularBitmap(android.graphics.Bitmap) -> getCircularBitmap
-    1648:1666:android.graphics.Bitmap getCroppedBitmap() -> getCroppedBitmap
-    1224:1253:android.graphics.Bitmap getCroppedBitmapFromUri() -> getCroppedBitmapFromUri
+    1674:1691:android.graphics.Bitmap getCircularBitmap(android.graphics.Bitmap) -> getCircularBitmap
+    1646:1664:android.graphics.Bitmap getCroppedBitmap() -> getCroppedBitmap
+    1224:1251:android.graphics.Bitmap getCroppedBitmapFromUri() -> getCroppedBitmapFromUri
     1146:1149:float getDensity() -> getDensity
-    2342:2342:float getFrameH() -> getFrameH
-    2338:2338:float getFrameW() -> getFrameW
-    1552:1553:android.graphics.Bitmap getImage(android.net.Uri) -> getImage
-    1338:1338:android.graphics.Bitmap getImageBitmap() -> getImageBitmap
+    2340:2340:float getFrameH() -> getFrameH
+    2336:2336:float getFrameW() -> getFrameW
+    1550:1551:android.graphics.Bitmap getImage(android.net.Uri) -> getImage
+    1336:1336:android.graphics.Bitmap getImageBitmap() -> getImageBitmap
     1048:1050:float getRatioX(float) -> getRatioX
     1098:1100:float getRatioX() -> getRatioX
     1073:1075:float getRatioY(float) -> getRatioY
@@ -18035,11 +18041,11 @@ com.isseiaoki.simplecropview.FreeCropImageView -> com.isseiaoki.simplecropview.F
     1194:1194:float getRotatedHeight(float,float,float) -> getRotatedHeight
     1182:1182:float getRotatedWidth(float) -> getRotatedWidth
     1186:1186:float getRotatedWidth(float,float,float) -> getRotatedWidth
-    2317:2317:android.net.Uri getSaveUri() -> getSaveUri
-    2308:2308:android.net.Uri getSourceUri() -> getSourceUri
-    1570:1571:android.graphics.Bitmap getThumbnail(android.net.Uri) -> getThumbnail
+    2315:2315:android.net.Uri getSaveUri() -> getSaveUri
+    2306:2306:android.net.Uri getSourceUri() -> getSourceUri
+    1568:1569:android.graphics.Bitmap getThumbnail(android.net.Uri) -> getThumbnail
     320:379:void handleStyleable(android.content.Context,android.util.AttributeSet,int,float) -> handleStyleable
-    2299:2299:boolean isCropping() -> isCropping
+    2297:2297:boolean isCropping() -> isCropping
     1005:1005:boolean isHeightTooSmall() -> isHeightTooSmall
     736:739:boolean isInsideCornerLeftBottom(float,float) -> isInsideCornerLeftBottom
     722:725:boolean isInsideCornerLeftTop(float,float) -> isInsideCornerLeftTop
@@ -18048,13 +18054,13 @@ com.isseiaoki.simplecropview.FreeCropImageView -> com.isseiaoki.simplecropview.F
     712:718:boolean isInsideFrame(float,float) -> isInsideFrame
     993:993:boolean isInsideHorizontal(float) -> isInsideHorizontal
     997:997:boolean isInsideVertical(float) -> isInsideVertical
-    2326:2326:boolean isSaving() -> isSaving
+    2324:2324:boolean isSaving() -> isSaving
     1001:1001:boolean isWidthTooSmall() -> isWidthTooSmall
-    1536:1536:com.isseiaoki.simplecropview.LoadRequest load(android.net.Uri) -> load
-    1482:1482:io.reactivex.Completable loadAsCompletable(android.net.Uri) -> loadAsCompletable
-    1496:1496:io.reactivex.Completable loadAsCompletable(android.net.Uri,boolean,android.graphics.RectF) -> loadAsCompletable
-    1429:1430:void loadAsync(android.net.Uri,com.isseiaoki.simplecropview.callback.LoadCallback) -> loadAsync
-    1444:1472:void loadAsync(android.net.Uri,boolean,android.graphics.RectF,com.isseiaoki.simplecropview.callback.LoadCallback) -> loadAsync
+    1534:1534:com.isseiaoki.simplecropview.LoadRequest load(android.net.Uri) -> load
+    1480:1480:io.reactivex.Completable loadAsCompletable(android.net.Uri) -> loadAsCompletable
+    1494:1494:io.reactivex.Completable loadAsCompletable(android.net.Uri,boolean,android.graphics.RectF) -> loadAsCompletable
+    1427:1428:void loadAsync(android.net.Uri,com.isseiaoki.simplecropview.callback.LoadCallback) -> loadAsync
+    1442:1470:void loadAsync(android.net.Uri,boolean,android.graphics.RectF,com.isseiaoki.simplecropview.callback.LoadCallback) -> loadAsync
     752:757:void moveFrame(float,float) -> moveFrame
     855:898:void moveHandleLB(float,float) -> moveHandleLB
     761:804:void moveHandleLT(float,float) -> moveHandleLT
@@ -18073,59 +18079,59 @@ com.isseiaoki.simplecropview.FreeCropImageView -> com.isseiaoki.simplecropview.F
     665:669:void onUp(android.view.MotionEvent) -> onUp
     1162:1172:void postErrorOnMainThread(com.isseiaoki.simplecropview.callback.Callback,java.lang.Throwable) -> postErrorOnMainThread
     1011:1045:void recalculateFrameRect(int) -> recalculateFrameRect
-    1397:1405:void resetImageInfo() -> resetImageInfo
-    1592:1631:void rotateImage(com.isseiaoki.simplecropview.FreeCropImageView$RotateDegrees,int) -> rotateImage
-    1639:1640:void rotateImage(com.isseiaoki.simplecropview.FreeCropImageView$RotateDegrees) -> rotateImage
-    1888:1888:com.isseiaoki.simplecropview.SaveRequest save(android.graphics.Bitmap) -> save
-    1864:1864:io.reactivex.Single saveAsSingle(android.graphics.Bitmap,android.net.Uri) -> saveAsSingle
-    1834:1853:void saveAsync(android.net.Uri,android.graphics.Bitmap,com.isseiaoki.simplecropview.callback.SaveCallback) -> saveAsync
-    1313:1315:android.net.Uri saveImage(android.graphics.Bitmap,android.net.Uri) -> saveImage
-    1274:1307:android.graphics.Bitmap scaleBitmapIfNeeded(android.graphics.Bitmap) -> scaleBitmapIfNeeded
-    2196:2197:void setAnimationDuration(int) -> setAnimationDuration
-    2187:2188:void setAnimationEnabled(boolean) -> setAnimationEnabled
-    2048:2050:void setBackgroundColor(int) -> setBackgroundColor
-    2334:2335:void setCenter(android.graphics.PointF) -> setCenter
-    2272:2273:void setCompressFormat(android.graphics.Bitmap$CompressFormat) -> setCompressFormat
-    2281:2282:void setCompressQuality(int) -> setCompressQuality
-    2158:2160:void setCropEnabled(boolean) -> setCropEnabled
-    1961:1967:void setCropMode(com.isseiaoki.simplecropview.FreeCropImageView$CropMode,int) -> setCropMode
-    1975:1976:void setCropMode(com.isseiaoki.simplecropview.FreeCropImageView$CropMode) -> setCropMode
-    1986:1986:void setCustomRatio(int,int,int) -> setCustomRatio
-    1999:2000:void setCustomRatio(int,int) -> setCustomRatio
-    2217:2220:void setDebug(boolean) -> setDebug
-    2168:2170:void setEnabled(boolean) -> setEnabled
-    2018:2020:void setFrameColor(int) -> setFrameColor
-    2138:2140:void setFrameStrokeWeightInDp(int) -> setFrameStrokeWeightInDp
-    2038:2040:void setGuideColor(int) -> setGuideColor
-    2099:2110:void setGuideShowMode(com.isseiaoki.simplecropview.FreeCropImageView$ShowMode) -> setGuideShowMode
-    2148:2150:void setGuideStrokeWeightInDp(int) -> setGuideStrokeWeightInDp
-    2028:2030:void setHandleColor(int) -> setHandleColor
-    2290:2291:void setHandleShadowEnabled(boolean) -> setHandleShadowEnabled
-    2119:2130:void setHandleShowMode(com.isseiaoki.simplecropview.FreeCropImageView$ShowMode) -> setHandleShowMode
-    2076:2077:void setHandleSizeInDp(int) -> setHandleSizeInDp
-    1347:1348:void setImageBitmap(android.graphics.Bitmap) -> setImageBitmap
-    1368:1371:void setImageDrawable(android.graphics.drawable.Drawable) -> setImageDrawable
-    1374:1376:void setImageDrawableInternal(android.graphics.drawable.Drawable) -> setImageDrawableInternal
-    1356:1360:void setImageResource(int) -> setImageResource
-    1384:1387:void setImageURI(android.net.Uri) -> setImageURI
-    2178:2179:void setInitialFrameScale(float) -> setInitialFrameScale
-    2206:2209:void setInterpolator(android.view.animation.Interpolator) -> setInterpolator
-    2228:2229:void setLoggingEnabled(boolean) -> setLoggingEnabled
+    1395:1403:void resetImageInfo() -> resetImageInfo
+    1590:1629:void rotateImage(com.isseiaoki.simplecropview.FreeCropImageView$RotateDegrees,int) -> rotateImage
+    1637:1638:void rotateImage(com.isseiaoki.simplecropview.FreeCropImageView$RotateDegrees) -> rotateImage
+    1886:1886:com.isseiaoki.simplecropview.SaveRequest save(android.graphics.Bitmap) -> save
+    1862:1862:io.reactivex.Single saveAsSingle(android.graphics.Bitmap,android.net.Uri) -> saveAsSingle
+    1832:1851:void saveAsync(android.net.Uri,android.graphics.Bitmap,com.isseiaoki.simplecropview.callback.SaveCallback) -> saveAsync
+    1311:1313:android.net.Uri saveImage(android.graphics.Bitmap,android.net.Uri) -> saveImage
+    1272:1305:android.graphics.Bitmap scaleBitmapIfNeeded(android.graphics.Bitmap) -> scaleBitmapIfNeeded
+    2194:2195:void setAnimationDuration(int) -> setAnimationDuration
+    2185:2186:void setAnimationEnabled(boolean) -> setAnimationEnabled
+    2046:2048:void setBackgroundColor(int) -> setBackgroundColor
+    2332:2333:void setCenter(android.graphics.PointF) -> setCenter
+    2270:2271:void setCompressFormat(android.graphics.Bitmap$CompressFormat) -> setCompressFormat
+    2279:2280:void setCompressQuality(int) -> setCompressQuality
+    2156:2158:void setCropEnabled(boolean) -> setCropEnabled
+    1959:1965:void setCropMode(com.isseiaoki.simplecropview.FreeCropImageView$CropMode,int) -> setCropMode
+    1973:1974:void setCropMode(com.isseiaoki.simplecropview.FreeCropImageView$CropMode) -> setCropMode
+    1984:1984:void setCustomRatio(int,int,int) -> setCustomRatio
+    1997:1998:void setCustomRatio(int,int) -> setCustomRatio
+    2215:2218:void setDebug(boolean) -> setDebug
+    2166:2168:void setEnabled(boolean) -> setEnabled
+    2016:2018:void setFrameColor(int) -> setFrameColor
+    2136:2138:void setFrameStrokeWeightInDp(int) -> setFrameStrokeWeightInDp
+    2036:2038:void setGuideColor(int) -> setGuideColor
+    2097:2108:void setGuideShowMode(com.isseiaoki.simplecropview.FreeCropImageView$ShowMode) -> setGuideShowMode
+    2146:2148:void setGuideStrokeWeightInDp(int) -> setGuideStrokeWeightInDp
+    2026:2028:void setHandleColor(int) -> setHandleColor
+    2288:2289:void setHandleShadowEnabled(boolean) -> setHandleShadowEnabled
+    2117:2128:void setHandleShowMode(com.isseiaoki.simplecropview.FreeCropImageView$ShowMode) -> setHandleShowMode
+    2074:2075:void setHandleSizeInDp(int) -> setHandleSizeInDp
+    1345:1346:void setImageBitmap(android.graphics.Bitmap) -> setImageBitmap
+    1366:1369:void setImageDrawable(android.graphics.drawable.Drawable) -> setImageDrawable
+    1372:1374:void setImageDrawableInternal(android.graphics.drawable.Drawable) -> setImageDrawableInternal
+    1354:1358:void setImageResource(int) -> setImageResource
+    1382:1385:void setImageURI(android.net.Uri) -> setImageURI
+    2176:2177:void setInitialFrameScale(float) -> setInitialFrameScale
+    2204:2207:void setInterpolator(android.view.animation.Interpolator) -> setInterpolator
+    2226:2227:void setLoggingEnabled(boolean) -> setLoggingEnabled
     520:524:void setMatrix() -> setMatrix
-    2058:2059:void setMinFrameSizeInDp(int) -> setMinFrameSizeInDp
-    2067:2068:void setMinFrameSizeInPx(int) -> setMinFrameSizeInPx
-    2249:2251:void setOutputHeight(int) -> setOutputHeight
-    2262:2264:void setOutputMaxSize(int,int) -> setOutputMaxSize
-    2238:2240:void setOutputWidth(int) -> setOutputWidth
-    2008:2010:void setOverlayColor(int) -> setOverlayColor
-    2330:2331:void setScale(float) -> setScale
-    2089:2090:void setTouchPaddingInDp(int) -> setTouchPaddingInDp
+    2056:2057:void setMinFrameSizeInDp(int) -> setMinFrameSizeInDp
+    2065:2066:void setMinFrameSizeInPx(int) -> setMinFrameSizeInPx
+    2247:2249:void setOutputHeight(int) -> setOutputHeight
+    2260:2262:void setOutputMaxSize(int,int) -> setOutputMaxSize
+    2236:2238:void setOutputWidth(int) -> setOutputWidth
+    2006:2008:void setOverlayColor(int) -> setOverlayColor
+    2328:2329:void setScale(float) -> setScale
+    2087:2088:void setTouchPaddingInDp(int) -> setTouchPaddingInDp
     1212:1219:void setupAnimatorIfNeeded() -> setupAnimatorIfNeeded
     529:529:void setupLayout(int,int) -> setupLayout
     1153:1153:float sq(float) -> sq
-    1711:1746:void startCrop(android.net.Uri,com.isseiaoki.simplecropview.callback.CropCallback,com.isseiaoki.simplecropview.callback.SaveCallback) -> startCrop
-    1417:1418:void startLoad(android.net.Uri,com.isseiaoki.simplecropview.callback.LoadCallback) -> startLoad
-    1390:1394:void updateLayout() -> updateLayout
+    1709:1744:void startCrop(android.net.Uri,com.isseiaoki.simplecropview.callback.CropCallback,com.isseiaoki.simplecropview.callback.SaveCallback) -> startCrop
+    1415:1416:void startLoad(android.net.Uri,com.isseiaoki.simplecropview.callback.LoadCallback) -> startLoad
+    1388:1392:void updateLayout() -> updateLayout
 com.isseiaoki.simplecropview.FreeCropImageView$1 -> com.isseiaoki.simplecropview.FreeCropImageView$j:
     android.graphics.RectF val$currentRect -> a
     com.isseiaoki.simplecropview.FreeCropImageView this$0 -> g
@@ -18142,50 +18148,50 @@ com.isseiaoki.simplecropview.FreeCropImageView$10 -> com.isseiaoki.simplecropvie
     com.isseiaoki.simplecropview.FreeCropImageView this$0 -> d
     com.isseiaoki.simplecropview.callback.CropCallback val$cropCallback -> c
     android.net.Uri val$sourceUri -> b
-    1758:1758:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.net.Uri,com.isseiaoki.simplecropview.callback.CropCallback) -> <init>
-    1761:1776:void run() -> run
+    1756:1756:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.net.Uri,com.isseiaoki.simplecropview.callback.CropCallback) -> <init>
+    1759:1774:void run() -> run
 com.isseiaoki.simplecropview.FreeCropImageView$10$1 -> com.isseiaoki.simplecropview.FreeCropImageView$a$a:
     com.isseiaoki.simplecropview.FreeCropImageView$10 this$1 -> c
     android.graphics.Bitmap val$cropped -> b
-    1767:1767:void <init>(com.isseiaoki.simplecropview.FreeCropImageView$10,android.graphics.Bitmap) -> <init>
-    1769:1771:void run() -> run
+    1765:1765:void <init>(com.isseiaoki.simplecropview.FreeCropImageView$10,android.graphics.Bitmap) -> <init>
+    1767:1769:void run() -> run
 com.isseiaoki.simplecropview.FreeCropImageView$11 -> com.isseiaoki.simplecropview.FreeCropImageView$b:
-    1804:1804:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
+    1802:1802:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
 com.isseiaoki.simplecropview.FreeCropImageView$12 -> com.isseiaoki.simplecropview.FreeCropImageView$c:
-    1800:1800:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
+    1798:1798:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
 com.isseiaoki.simplecropview.FreeCropImageView$13 -> com.isseiaoki.simplecropview.FreeCropImageView$d:
     com.isseiaoki.simplecropview.FreeCropImageView this$0 -> b
     android.net.Uri val$sourceUri -> a
-    1794:1794:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.net.Uri) -> <init>
-    1794:1794:java.lang.Object call() -> call
-    1797:1798:android.graphics.Bitmap call() -> call
+    1792:1792:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.net.Uri) -> <init>
+    1792:1792:java.lang.Object call() -> call
+    1795:1796:android.graphics.Bitmap call() -> call
 com.isseiaoki.simplecropview.FreeCropImageView$14 -> com.isseiaoki.simplecropview.FreeCropImageView$e:
     android.graphics.Bitmap val$image -> b
     com.isseiaoki.simplecropview.FreeCropImageView this$0 -> e
     com.isseiaoki.simplecropview.callback.SaveCallback val$saveCallback -> d
     android.net.Uri val$saveUri -> c
-    1834:1834:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.graphics.Bitmap,android.net.Uri,com.isseiaoki.simplecropview.callback.SaveCallback) -> <init>
-    1838:1849:void run() -> run
+    1832:1832:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.graphics.Bitmap,android.net.Uri,com.isseiaoki.simplecropview.callback.SaveCallback) -> <init>
+    1836:1847:void run() -> run
 com.isseiaoki.simplecropview.FreeCropImageView$14$1 -> com.isseiaoki.simplecropview.FreeCropImageView$e$a:
     com.isseiaoki.simplecropview.FreeCropImageView$14 this$1 -> b
-    1841:1841:void <init>(com.isseiaoki.simplecropview.FreeCropImageView$14) -> <init>
-    1843:1844:void run() -> run
+    1839:1839:void <init>(com.isseiaoki.simplecropview.FreeCropImageView$14) -> <init>
+    1841:1842:void run() -> run
 com.isseiaoki.simplecropview.FreeCropImageView$15 -> com.isseiaoki.simplecropview.FreeCropImageView$f:
-    1873:1873:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
+    1871:1871:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
 com.isseiaoki.simplecropview.FreeCropImageView$16 -> com.isseiaoki.simplecropview.FreeCropImageView$g:
-    1869:1869:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
+    1867:1867:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
 com.isseiaoki.simplecropview.FreeCropImageView$17 -> com.isseiaoki.simplecropview.FreeCropImageView$h:
     com.isseiaoki.simplecropview.FreeCropImageView this$0 -> c
     android.graphics.Bitmap val$bitmap -> a
     android.net.Uri val$saveUri -> b
-    1864:1864:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.graphics.Bitmap,android.net.Uri) -> <init>
-    1864:1864:java.lang.Object call() -> call
-    1867:1867:android.net.Uri call() -> call
+    1862:1862:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.graphics.Bitmap,android.net.Uri) -> <init>
+    1862:1862:java.lang.Object call() -> call
+    1865:1865:android.net.Uri call() -> call
 com.isseiaoki.simplecropview.FreeCropImageView$18 -> com.isseiaoki.simplecropview.FreeCropImageView$i:
     int[] $SwitchMap$com$isseiaoki$simplecropview$FreeCropImageView$CropMode -> b
     int[] $SwitchMap$com$isseiaoki$simplecropview$FreeCropImageView$ShowMode -> c
     int[] $SwitchMap$com$isseiaoki$simplecropview$FreeCropImageView$TouchArea -> a
-    2100:640:void <clinit>() -> <clinit>
+    2098:640:void <clinit>() -> <clinit>
 com.isseiaoki.simplecropview.FreeCropImageView$2 -> com.isseiaoki.simplecropview.FreeCropImageView$k:
     java.lang.Throwable val$e -> c
     com.isseiaoki.simplecropview.callback.Callback val$callback -> b
@@ -18197,24 +18203,24 @@ com.isseiaoki.simplecropview.FreeCropImageView$3 -> com.isseiaoki.simplecropview
     android.net.Uri val$sourceUri -> b
     com.isseiaoki.simplecropview.callback.LoadCallback val$callback -> e
     boolean val$useThumbnail -> d
-    1444:1444:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.net.Uri,android.graphics.RectF,boolean,com.isseiaoki.simplecropview.callback.LoadCallback) -> <init>
-    1447:1468:void run() -> run
+    1442:1442:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.net.Uri,android.graphics.RectF,boolean,com.isseiaoki.simplecropview.callback.LoadCallback) -> <init>
+    1445:1466:void run() -> run
 com.isseiaoki.simplecropview.FreeCropImageView$3$1 -> com.isseiaoki.simplecropview.FreeCropImageView$l$a:
     android.graphics.Bitmap val$sampled -> b
     com.isseiaoki.simplecropview.FreeCropImageView$3 this$1 -> c
-    1458:1458:void <init>(com.isseiaoki.simplecropview.FreeCropImageView$3,android.graphics.Bitmap) -> <init>
-    1460:1463:void run() -> run
+    1456:1456:void <init>(com.isseiaoki.simplecropview.FreeCropImageView$3,android.graphics.Bitmap) -> <init>
+    1458:1461:void run() -> run
 com.isseiaoki.simplecropview.FreeCropImageView$4 -> com.isseiaoki.simplecropview.FreeCropImageView$m:
-    1521:1521:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
+    1519:1519:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
 com.isseiaoki.simplecropview.FreeCropImageView$5 -> com.isseiaoki.simplecropview.FreeCropImageView$n:
-    1517:1517:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
+    1515:1515:void <init>(com.isseiaoki.simplecropview.FreeCropImageView) -> <init>
 com.isseiaoki.simplecropview.FreeCropImageView$6 -> com.isseiaoki.simplecropview.FreeCropImageView$o:
-    1496:1496:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.graphics.RectF,android.net.Uri,boolean) -> <init>
+    1494:1494:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.graphics.RectF,android.net.Uri,boolean) -> <init>
 com.isseiaoki.simplecropview.FreeCropImageView$7 -> com.isseiaoki.simplecropview.FreeCropImageView$p:
     com.isseiaoki.simplecropview.FreeCropImageView this$0 -> c
     android.graphics.Bitmap val$thumb -> b
-    1542:1542:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.graphics.Bitmap) -> <init>
-    1544:1546:void run() -> run
+    1540:1540:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,android.graphics.Bitmap) -> <init>
+    1542:1544:void run() -> run
 com.isseiaoki.simplecropview.FreeCropImageView$8 -> com.isseiaoki.simplecropview.FreeCropImageView$q:
     com.isseiaoki.simplecropview.FreeCropImageView this$0 -> g
     float val$newScale -> f
@@ -18223,38 +18229,38 @@ com.isseiaoki.simplecropview.FreeCropImageView$8 -> com.isseiaoki.simplecropview
     float val$currentScale -> c
     float val$angleDiff -> b
     float val$currentAngle -> a
-    1605:1605:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,float,float,float,float,float,float) -> <init>
-    1611:1615:void onAnimationUpdated(float) -> a
-    1618:1623:void onAnimationFinished() -> a
-    1607:1608:void onAnimationStarted() -> b
+    1603:1603:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,float,float,float,float,float,float) -> <init>
+    1609:1613:void onAnimationUpdated(float) -> a
+    1616:1621:void onAnimationFinished() -> a
+    1605:1606:void onAnimationStarted() -> b
 com.isseiaoki.simplecropview.FreeCropImageView$9 -> com.isseiaoki.simplecropview.FreeCropImageView$r:
     com.isseiaoki.simplecropview.FreeCropImageView this$0 -> e
     com.isseiaoki.simplecropview.callback.CropCallback val$cropCallback -> b
     com.isseiaoki.simplecropview.callback.SaveCallback val$saveCallback -> d
     android.net.Uri val$saveUri -> c
-    1711:1711:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,com.isseiaoki.simplecropview.callback.CropCallback,android.net.Uri,com.isseiaoki.simplecropview.callback.SaveCallback) -> <init>
-    1713:1742:void run() -> run
+    1709:1709:void <init>(com.isseiaoki.simplecropview.FreeCropImageView,com.isseiaoki.simplecropview.callback.CropCallback,android.net.Uri,com.isseiaoki.simplecropview.callback.SaveCallback) -> <init>
+    1711:1740:void run() -> run
 com.isseiaoki.simplecropview.FreeCropImageView$9$1 -> com.isseiaoki.simplecropview.FreeCropImageView$r$a:
     android.graphics.Bitmap val$cropped -> b
     com.isseiaoki.simplecropview.FreeCropImageView$9 this$1 -> c
-    1721:1721:void <init>(com.isseiaoki.simplecropview.FreeCropImageView$9,android.graphics.Bitmap) -> <init>
-    1723:1725:void run() -> run
+    1719:1719:void <init>(com.isseiaoki.simplecropview.FreeCropImageView$9,android.graphics.Bitmap) -> <init>
+    1721:1723:void run() -> run
 com.isseiaoki.simplecropview.FreeCropImageView$9$2 -> com.isseiaoki.simplecropview.FreeCropImageView$r$b:
     com.isseiaoki.simplecropview.FreeCropImageView$9 this$1 -> b
-    1730:1730:void <init>(com.isseiaoki.simplecropview.FreeCropImageView$9) -> <init>
-    1732:1733:void run() -> run
+    1728:1728:void <init>(com.isseiaoki.simplecropview.FreeCropImageView$9) -> <init>
+    1730:1731:void run() -> run
 com.isseiaoki.simplecropview.FreeCropImageView$CropMode -> com.isseiaoki.simplecropview.FreeCropImageView$CropMode:
-    2352:2351:void <clinit>() -> <clinit>
-    2356:2358:void <init>(java.lang.String,int,int) -> <init>
-    2361:2361:int getId() -> getId
-    2351:2351:com.isseiaoki.simplecropview.FreeCropImageView$CropMode valueOf(java.lang.String) -> valueOf
-    2351:2351:com.isseiaoki.simplecropview.FreeCropImageView$CropMode[] values() -> values
+    2350:2349:void <clinit>() -> <clinit>
+    2354:2356:void <init>(java.lang.String,int,int) -> <init>
+    2359:2359:int getId() -> getId
+    2349:2349:com.isseiaoki.simplecropview.FreeCropImageView$CropMode valueOf(java.lang.String) -> valueOf
+    2349:2349:com.isseiaoki.simplecropview.FreeCropImageView$CropMode[] values() -> values
 com.isseiaoki.simplecropview.FreeCropImageView$RotateDegrees -> com.isseiaoki.simplecropview.FreeCropImageView$RotateDegrees:
-    2379:2378:void <clinit>() -> <clinit>
-    2384:2386:void <init>(java.lang.String,int,int) -> <init>
-    2389:2389:int getValue() -> getValue
-    2378:2378:com.isseiaoki.simplecropview.FreeCropImageView$RotateDegrees valueOf(java.lang.String) -> valueOf
-    2378:2378:com.isseiaoki.simplecropview.FreeCropImageView$RotateDegrees[] values() -> values
+    2377:2376:void <clinit>() -> <clinit>
+    2382:2384:void <init>(java.lang.String,int,int) -> <init>
+    2387:2387:int getValue() -> getValue
+    2376:2376:com.isseiaoki.simplecropview.FreeCropImageView$RotateDegrees valueOf(java.lang.String) -> valueOf
+    2376:2376:com.isseiaoki.simplecropview.FreeCropImageView$RotateDegrees[] values() -> values
 com.isseiaoki.simplecropview.FreeCropImageView$SavedState -> com.isseiaoki.simplecropview.FreeCropImageView$SavedState:
     com.isseiaoki.simplecropview.FreeCropImageView$ShowMode guideShowMode -> f
     boolean showHandle -> i
@@ -18293,28 +18299,28 @@ com.isseiaoki.simplecropview.FreeCropImageView$SavedState -> com.isseiaoki.simpl
     float guideStrokeWeight -> p
     int handleColor -> r
     float customRatioY -> n
-    2520:2520:void <clinit>() -> <clinit>
-    2395:2395:void <init>(android.os.Parcel,com.isseiaoki.simplecropview.FreeCropImageView$1) -> <init>
-    2435:2436:void <init>(android.os.Parcelable) -> <init>
-    2439:2477:void <init>(android.os.Parcel) -> <init>
-    2480:2518:void writeToParcel(android.os.Parcel,int) -> writeToParcel
+    2518:2518:void <clinit>() -> <clinit>
+    2393:2393:void <init>(android.os.Parcel,com.isseiaoki.simplecropview.FreeCropImageView$1) -> <init>
+    2433:2434:void <init>(android.os.Parcelable) -> <init>
+    2437:2475:void <init>(android.os.Parcel) -> <init>
+    2478:2516:void writeToParcel(android.os.Parcel,int) -> writeToParcel
 com.isseiaoki.simplecropview.FreeCropImageView$SavedState$1 -> com.isseiaoki.simplecropview.FreeCropImageView$SavedState$a:
-    2520:2520:void <init>() -> <init>
-    2520:2520:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-    2522:2522:com.isseiaoki.simplecropview.FreeCropImageView$SavedState createFromParcel(android.os.Parcel) -> createFromParcel
-    2520:2520:java.lang.Object[] newArray(int) -> newArray
-    2526:2526:com.isseiaoki.simplecropview.FreeCropImageView$SavedState[] newArray(int) -> newArray
+    2518:2518:void <init>() -> <init>
+    2518:2518:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+    2520:2520:com.isseiaoki.simplecropview.FreeCropImageView$SavedState createFromParcel(android.os.Parcel) -> createFromParcel
+    2518:2518:java.lang.Object[] newArray(int) -> newArray
+    2524:2524:com.isseiaoki.simplecropview.FreeCropImageView$SavedState[] newArray(int) -> newArray
 com.isseiaoki.simplecropview.FreeCropImageView$ShowMode -> com.isseiaoki.simplecropview.FreeCropImageView$ShowMode:
-    2366:2365:void <clinit>() -> <clinit>
-    2369:2371:void <init>(java.lang.String,int,int) -> <init>
-    2374:2374:int getId() -> getId
-    2365:2365:com.isseiaoki.simplecropview.FreeCropImageView$ShowMode valueOf(java.lang.String) -> valueOf
-    2365:2365:com.isseiaoki.simplecropview.FreeCropImageView$ShowMode[] values() -> values
+    2364:2363:void <clinit>() -> <clinit>
+    2367:2369:void <init>(java.lang.String,int,int) -> <init>
+    2372:2372:int getId() -> getId
+    2363:2363:com.isseiaoki.simplecropview.FreeCropImageView$ShowMode valueOf(java.lang.String) -> valueOf
+    2363:2363:com.isseiaoki.simplecropview.FreeCropImageView$ShowMode[] values() -> values
 com.isseiaoki.simplecropview.FreeCropImageView$TouchArea -> com.isseiaoki.simplecropview.FreeCropImageView$TouchArea:
-    2348:2347:void <clinit>() -> <clinit>
-    2347:2347:void <init>(java.lang.String,int) -> <init>
-    2347:2347:com.isseiaoki.simplecropview.FreeCropImageView$TouchArea valueOf(java.lang.String) -> valueOf
-    2347:2347:com.isseiaoki.simplecropview.FreeCropImageView$TouchArea[] values() -> values
+    2346:2345:void <clinit>() -> <clinit>
+    2345:2345:void <init>(java.lang.String,int) -> <init>
+    2345:2345:com.isseiaoki.simplecropview.FreeCropImageView$TouchArea valueOf(java.lang.String) -> valueOf
+    2345:2345:com.isseiaoki.simplecropview.FreeCropImageView$TouchArea[] values() -> values
 com.isseiaoki.simplecropview.LoadRequest -> com.isseiaoki.simplecropview.b:
     android.graphics.RectF initialFrameRect -> b
     android.net.Uri sourceUri -> e
@@ -18433,87 +18439,84 @@ com.lzy.imagepicker.DataHolder -> com.lzy.imagepicker.a:
     32:35:void save(java.lang.String,java.util.List) -> a
     38:39:java.lang.Object retrieve(java.lang.String) -> a
 com.lzy.imagepicker.ImageDataSource -> com.lzy.imagepicker.b:
-    com.lzy.imagepicker.ImageDataSource$OnImagesLoadedListener loadedListener -> e
-    java.util.ArrayList imageFolders -> f
-    int mLoadedCount -> g
-    androidx.fragment.app.FragmentActivity activity -> d
+    com.lzy.imagepicker.ImageDataSource$OnImagesLoadedListener loadedListener -> c
+    androidx.fragment.app.FragmentActivity activity -> b
+    java.util.ArrayList imageFolders -> d
+    int mLoadedCount -> e
     java.lang.String[] IMAGE_PROJECTION -> a
-    java.lang.String[] mCurProjection -> c
-    java.lang.String[] IMAGE_PROJECTION_Q -> b
-    57:70:void <init>(androidx.fragment.app.FragmentActivity,java.lang.String,com.lzy.imagepicker.ImageDataSource$OnImagesLoadedListener) -> <init>
-    25:25:void onLoadFinished(androidx.loader.content.Loader,java.lang.Object) -> a
-    74:85:androidx.loader.content.Loader onCreateLoader(int,android.os.Bundle) -> a
-    90:91:void onLoadFinished(androidx.loader.content.Loader,android.database.Cursor) -> a
-    166:167:void onLoaderReset(androidx.loader.content.Loader) -> a
+    39:52:void <init>(androidx.fragment.app.FragmentActivity,java.lang.String,com.lzy.imagepicker.ImageDataSource$OnImagesLoadedListener) -> <init>
+    20:20:void onLoadFinished(androidx.loader.content.Loader,java.lang.Object) -> a
+    56:62:androidx.loader.content.Loader onCreateLoader(int,android.os.Bundle) -> a
+    67:68:void onLoadFinished(androidx.loader.content.Loader,android.database.Cursor) -> a
+    129:130:void onLoaderReset(androidx.loader.content.Loader) -> a
 com.lzy.imagepicker.ImageDataSource$OnImagesLoadedListener -> com.lzy.imagepicker.b$a:
     void onImagesLoaded(java.util.List) -> a
 com.lzy.imagepicker.ImagePicker -> com.lzy.imagepicker.c:
-    java.util.List mImageSelectedListeners -> r
-    boolean isFreeCrop -> n
-    java.util.List mImageFolders -> p
+    com.lzy.imagepicker.ImagePicker mInstance -> t
+    java.util.List mImageFolders -> q
+    boolean isFreeCrop -> o
     com.lzy.imagepicker.view.CropImageView$Style style -> k
     int focusWidth -> h
     com.lzy.imagepicker.loader.ImageLoader imageLoader -> j
     int focusHeight -> i
+    java.util.List mImageSelectedListeners -> s
     int outPutX -> f
     int outPutY -> g
     int selectLimit -> b
-    com.isseiaoki.simplecropview.FreeCropImageView$CropMode mFreeCropMode -> m
-    boolean isOrigin -> t
-    java.util.ArrayList mSelectedImages -> o
+    com.isseiaoki.simplecropview.FreeCropImageView$CropMode mFreeCropMode -> n
     boolean isSaveRectangle -> e
     java.io.File cropCacheFolder -> l
     boolean multiMode -> a
-    android.net.Uri mUri -> s
+    int mCurrentImageFolderPosition -> r
+    java.io.File takeImageFile -> m
     boolean crop -> c
-    com.lzy.imagepicker.ImagePicker mInstance -> u
     boolean showCamera -> d
-    int mCurrentImageFolderPosition -> q
-    30:30:void <clinit>() -> <clinit>
-    67:68:void <init>() -> <init>
-    102:103:void setCrop(boolean) -> a
-    166:170:java.io.File getCropCacheFolder(android.content.Context) -> a
-    182:183:void setImageLoader(com.lzy.imagepicker.loader.ImageLoader) -> a
-    190:191:void setStyle(com.lzy.imagepicker.view.CropImageView$Style) -> a
-    198:199:void setImageFolders(java.util.List) -> a
-    206:207:void setCurrentImageFolderPosition(int) -> a
-    214:214:boolean isSelect(com.lzy.imagepicker.bean.ImageItem) -> a
-    233:245:void clear() -> a
-    259:274:void takePicSupportQ(android.app.Activity,int) -> a
-    277:279:java.lang.String getFileName(java.lang.String,java.lang.String) -> a
-    288:290:void addOnImageSelectedListener(com.lzy.imagepicker.ImagePicker$OnImageSelectedListener) -> a
-    298:301:void addSelectedImageItem(int,com.lzy.imagepicker.bean.ImageItem,boolean) -> a
-    304:308:void setSelectedImages(java.util.ArrayList) -> a
-    318:330:void restoreInstanceState(android.os.Bundle) -> a
-    86:87:void setMultiMode(boolean) -> b
-    126:127:void setOutPutX(int) -> b
-    229:230:void clearSelectedImages() -> b
-    249:255:void takePicture(android.app.Activity,int) -> b
-    293:295:void removeOnImageSelectedListener(com.lzy.imagepicker.ImagePicker$OnImageSelectedListener) -> b
-    311:315:void notifyImageSelectedChanged(int,com.lzy.imagepicker.bean.ImageItem,boolean) -> b
-    334:346:void saveInstanceState(android.os.Bundle) -> b
-    134:135:void setOutPutY(int) -> c
-    158:159:void setOrigin(boolean) -> c
-    210:210:java.util.ArrayList getCurrentImageFolderItems() -> c
-    94:95:void setSelectLimit(int) -> d
-    118:119:void setSaveRectangle(boolean) -> d
-    146:146:int getFocusHeight() -> d
-    110:111:void setShowCamera(boolean) -> e
-    138:138:int getFocusWidth() -> e
-    178:178:com.lzy.imagepicker.loader.ImageLoader getImageLoader() -> f
-    122:122:int getOutPutX() -> g
-    130:130:int getOutPutY() -> h
-    218:221:int getSelectImageCount() -> i
-    90:90:int getSelectLimit() -> j
-    225:225:java.util.ArrayList getSelectedImages() -> k
-    186:186:com.lzy.imagepicker.view.CropImageView$Style getStyle() -> l
-    162:162:android.net.Uri getUri() -> m
-    98:98:boolean isCrop() -> n
-    82:82:boolean isMultiMode() -> o
-    154:154:boolean isOrigin() -> p
-    114:114:boolean isSaveRectangle() -> q
-    106:106:boolean isShowCamera() -> r
-    71:78:com.lzy.imagepicker.ImagePicker getInstance() -> s
+    java.util.ArrayList mSelectedImages -> p
+    36:36:void <clinit>() -> <clinit>
+    72:73:void <init>() -> <init>
+    107:108:void setCrop(boolean) -> a
+    163:167:java.io.File getCropCacheFolder(android.content.Context) -> a
+    179:180:void setImageLoader(com.lzy.imagepicker.loader.ImageLoader) -> a
+    187:188:void setStyle(com.lzy.imagepicker.view.CropImageView$Style) -> a
+    195:196:void setImageFolders(java.util.List) -> a
+    203:204:void setCurrentImageFolderPosition(int) -> a
+    211:211:boolean isSelect(com.lzy.imagepicker.bean.ImageItem) -> a
+    230:242:void clear() -> a
+    246:276:void takePicture(android.app.Activity,int) -> a
+    279:282:java.io.File createFile(java.io.File,java.lang.String,java.lang.String) -> a
+    287:291:void galleryAddPic(android.content.Context,java.io.File) -> a
+    298:300:void addOnImageSelectedListener(com.lzy.imagepicker.ImagePicker$OnImageSelectedListener) -> a
+    308:311:void addSelectedImageItem(int,com.lzy.imagepicker.bean.ImageItem,boolean) -> a
+    314:318:void setSelectedImages(java.util.ArrayList) -> a
+    328:341:void restoreInstanceState(android.os.Bundle) -> a
+    91:92:void setMultiMode(boolean) -> b
+    155:156:void setFocusHeight(int) -> b
+    226:227:void clearSelectedImages() -> b
+    303:305:void removeOnImageSelectedListener(com.lzy.imagepicker.ImagePicker$OnImageSelectedListener) -> b
+    321:325:void notifyImageSelectedChanged(int,com.lzy.imagepicker.bean.ImageItem,boolean) -> b
+    345:358:void saveInstanceState(android.os.Bundle) -> b
+    123:124:void setSaveRectangle(boolean) -> c
+    147:148:void setFocusWidth(int) -> c
+    207:207:java.util.ArrayList getCurrentImageFolderItems() -> c
+    115:116:void setShowCamera(boolean) -> d
+    131:132:void setOutPutX(int) -> d
+    151:151:int getFocusHeight() -> d
+    139:140:void setOutPutY(int) -> e
+    143:143:int getFocusWidth() -> e
+    99:100:void setSelectLimit(int) -> f
+    175:175:com.lzy.imagepicker.loader.ImageLoader getImageLoader() -> f
+    127:127:int getOutPutX() -> g
+    135:135:int getOutPutY() -> h
+    215:218:int getSelectImageCount() -> i
+    95:95:int getSelectLimit() -> j
+    222:222:java.util.ArrayList getSelectedImages() -> k
+    183:183:com.lzy.imagepicker.view.CropImageView$Style getStyle() -> l
+    159:159:java.io.File getTakeImageFile() -> m
+    103:103:boolean isCrop() -> n
+    87:87:boolean isMultiMode() -> o
+    119:119:boolean isSaveRectangle() -> p
+    111:111:boolean isShowCamera() -> q
+    76:83:com.lzy.imagepicker.ImagePicker getInstance() -> r
 com.lzy.imagepicker.ImagePicker$OnImageSelectedListener -> com.lzy.imagepicker.c$a:
     void onImageSelected(int,com.lzy.imagepicker.bean.ImageItem,boolean) -> a
 com.lzy.imagepicker.ImagePickerProvider -> com.lzy.imagepicker.ImagePickerProvider:
@@ -18521,32 +18524,34 @@ com.lzy.imagepicker.ImagePickerProvider -> com.lzy.imagepicker.ImagePickerProvid
 com.lzy.imagepicker.R$anim -> com.lzy.imagepicker.R$anim:
     13:13:void <init>() -> <init>
 com.lzy.imagepicker.R$attr -> com.lzy.imagepicker.R$attr:
-    35:35:void <init>() -> <init>
+    47:47:void <init>() -> <init>
 com.lzy.imagepicker.R$bool -> com.lzy.imagepicker.R$bool:
-    336:336:void <init>() -> <init>
+    372:372:void <init>() -> <init>
 com.lzy.imagepicker.R$color -> com.lzy.imagepicker.R$color:
-    343:343:void <init>() -> <init>
+    379:379:void <init>() -> <init>
 com.lzy.imagepicker.R$dimen -> com.lzy.imagepicker.R$dimen:
-    446:446:void <init>() -> <init>
+    482:482:void <init>() -> <init>
 com.lzy.imagepicker.R$drawable -> com.lzy.imagepicker.R$drawable:
-    565:565:void <init>() -> <init>
+    610:610:void <init>() -> <init>
 com.lzy.imagepicker.R$id -> com.lzy.imagepicker.R$id:
-    681:681:void <init>() -> <init>
+    736:736:void <init>() -> <init>
 com.lzy.imagepicker.R$integer -> com.lzy.imagepicker.R$integer:
-    834:834:void <init>() -> <init>
+    933:933:void <init>() -> <init>
+com.lzy.imagepicker.R$interpolator -> com.lzy.imagepicker.R$interpolator:
+    942:942:void <init>() -> <init>
 com.lzy.imagepicker.R$layout -> com.lzy.imagepicker.R$layout:
-    843:843:void <init>() -> <init>
+    953:953:void <init>() -> <init>
 com.lzy.imagepicker.R$mipmap -> com.lzy.imagepicker.R$mipmap:
-    895:895:void <init>() -> <init>
+    1006:1006:void <init>() -> <init>
 com.lzy.imagepicker.R$string -> com.lzy.imagepicker.R$string:
-    903:903:void <init>() -> <init>
+    1014:1014:void <init>() -> <init>
 com.lzy.imagepicker.R$style -> com.lzy.imagepicker.R$style:
-    957:957:void <init>() -> <init>
+    1068:1068:void <init>() -> <init>
 com.lzy.imagepicker.R$styleable -> com.lzy.imagepicker.R$styleable:
-    1313:1798:void <clinit>() -> <clinit>
-    1311:1311:void <init>() -> <init>
+    1428:1926:void <clinit>() -> <clinit>
+    1426:1426:void <init>() -> <init>
 com.lzy.imagepicker.R$xml -> com.lzy.imagepicker.R$xml:
-    1820:1820:void <init>() -> <init>
+    1948:1948:void <init>() -> <init>
 com.lzy.imagepicker.adapter.ImageFolderAdapter -> com.lzy.imagepicker.adapter.ImageFolderAdapter:
     29:37:void <init>(android.app.Activity,java.util.List) -> <init>
     47:47:int getCount() -> getCount
@@ -18643,57 +18648,57 @@ com.lzy.imagepicker.bean.ImageFolder -> com.lzy.imagepicker.bean.ImageFolder:
     6:6:void <init>() -> <init>
     16:21:boolean equals(java.lang.Object) -> equals
 com.lzy.imagepicker.bean.ImageItem -> com.lzy.imagepicker.bean.ImageItem:
-    75:75:void <clinit>() -> <clinit>
-    62:63:void <init>() -> <init>
-    65:73:void <init>(android.os.Parcel) -> <init>
-    48:48:int describeContents() -> describeContents
-    25:33:boolean equals(java.lang.Object) -> equals
-    40:40:java.lang.String toString() -> toString
-    53:60:void writeToParcel(android.os.Parcel,int) -> writeToParcel
+    58:58:void <clinit>() -> <clinit>
+    45:46:void <init>() -> <init>
+    48:56:void <init>(android.os.Parcel) -> <init>
+    31:31:int describeContents() -> describeContents
+    20:25:boolean equals(java.lang.Object) -> equals
+    36:43:void writeToParcel(android.os.Parcel,int) -> writeToParcel
 com.lzy.imagepicker.bean.ImageItem$1 -> com.lzy.imagepicker.bean.ImageItem$a:
-    75:75:void <init>() -> <init>
-    75:75:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-    78:78:com.lzy.imagepicker.bean.ImageItem createFromParcel(android.os.Parcel) -> createFromParcel
-    75:75:java.lang.Object[] newArray(int) -> newArray
-    83:83:com.lzy.imagepicker.bean.ImageItem[] newArray(int) -> newArray
+    58:58:void <init>() -> <init>
+    58:58:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+    61:61:com.lzy.imagepicker.bean.ImageItem createFromParcel(android.os.Parcel) -> createFromParcel
+    58:58:java.lang.Object[] newArray(int) -> newArray
+    66:66:com.lzy.imagepicker.bean.ImageItem[] newArray(int) -> newArray
 com.lzy.imagepicker.ui.FreeCropActivity -> com.lzy.imagepicker.ui.FreeCropActivity:
-    android.graphics.Bitmap$CompressFormat mCompressFormat -> y
-    android.net.Uri mSourceUri -> z
-    android.view.View mLoadingBox -> A
+    android.graphics.Bitmap$CompressFormat mCompressFormat -> z
+    java.lang.String mImagePath -> y
+    com.isseiaoki.simplecropview.callback.LoadCallback mLoadCallback -> C
+    com.isseiaoki.simplecropview.callback.CropCallback mCropCallback -> D
+    com.isseiaoki.simplecropview.callback.SaveCallback mSaveCallback -> E
     java.util.ArrayList mImageItems -> v
-    com.isseiaoki.simplecropview.callback.LoadCallback mLoadCallback -> B
     com.isseiaoki.simplecropview.FreeCropImageView mCropImageView -> x
-    com.isseiaoki.simplecropview.callback.CropCallback mCropCallback -> C
-    com.isseiaoki.simplecropview.callback.SaveCallback mSaveCallback -> D
+    android.view.View mLoadingBox -> B
     com.lzy.imagepicker.ImagePicker imagePicker -> w
-    28:95:void <init>() -> <init>
+    android.net.Uri mSourceUri -> A
+    28:97:void <init>() -> <init>
     28:28:com.isseiaoki.simplecropview.callback.SaveCallback access$000(com.lzy.imagepicker.ui.FreeCropActivity) -> a
-    120:127:android.net.Uri createNewUri(android.content.Context,android.graphics.Bitmap$CompressFormat) -> a
-    149:152:java.lang.String getMimeType(android.graphics.Bitmap$CompressFormat) -> a
+    122:129:android.net.Uri createNewUri(android.content.Context,android.graphics.Bitmap$CompressFormat) -> a
+    151:154:java.lang.String getMimeType(android.graphics.Bitmap$CompressFormat) -> a
     28:28:android.graphics.Bitmap$CompressFormat access$100(com.lzy.imagepicker.ui.FreeCropActivity) -> b
     28:28:com.isseiaoki.simplecropview.FreeCropImageView access$200(com.lzy.imagepicker.ui.FreeCropActivity) -> c
     28:28:android.view.View access$300(com.lzy.imagepicker.ui.FreeCropActivity) -> d
     28:28:java.util.ArrayList access$400(com.lzy.imagepicker.ui.FreeCropActivity) -> e
-    116:116:android.net.Uri createSaveUri() -> o
-    62:70:void onClick(android.view.View) -> onClick
-    38:58:void onCreate(android.os.Bundle) -> onCreate
+    118:118:android.net.Uri createSaveUri() -> o
+    64:72:void onClick(android.view.View) -> onClick
+    39:60:void onCreate(android.os.Bundle) -> onCreate
 com.lzy.imagepicker.ui.FreeCropActivity$1 -> com.lzy.imagepicker.ui.FreeCropActivity$a:
-    72:72:void <init>(com.lzy.imagepicker.ui.FreeCropActivity) -> <init>
-    75:75:void onSuccess() -> a
-    79:79:void onError(java.lang.Throwable) -> a
+    74:74:void <init>(com.lzy.imagepicker.ui.FreeCropActivity) -> <init>
+    77:77:void onSuccess() -> a
+    81:81:void onError(java.lang.Throwable) -> a
 com.lzy.imagepicker.ui.FreeCropActivity$2 -> com.lzy.imagepicker.ui.FreeCropActivity$b:
     com.lzy.imagepicker.ui.FreeCropActivity this$0 -> a
-    81:81:void <init>(com.lzy.imagepicker.ui.FreeCropActivity) -> <init>
-    84:87:void onSuccess(android.graphics.Bitmap) -> a
-    92:93:void onError(java.lang.Throwable) -> a
+    83:83:void <init>(com.lzy.imagepicker.ui.FreeCropActivity) -> <init>
+    86:89:void onSuccess(android.graphics.Bitmap) -> a
+    94:95:void onError(java.lang.Throwable) -> a
 com.lzy.imagepicker.ui.FreeCropActivity$3 -> com.lzy.imagepicker.ui.FreeCropActivity$c:
     com.lzy.imagepicker.ui.FreeCropActivity this$0 -> a
-    95:95:void <init>(com.lzy.imagepicker.ui.FreeCropActivity) -> <init>
-    98:107:void onSuccess(android.net.Uri) -> a
-    111:112:void onError(java.lang.Throwable) -> a
+    97:97:void <init>(com.lzy.imagepicker.ui.FreeCropActivity) -> <init>
+    100:109:void onSuccess(android.net.Uri) -> a
+    113:114:void onError(java.lang.Throwable) -> a
 com.lzy.imagepicker.ui.FreeCropActivity$4 -> com.lzy.imagepicker.ui.FreeCropActivity$d:
     int[] $SwitchMap$android$graphics$Bitmap$CompressFormat -> a
-    150:150:void <clinit>() -> <clinit>
+    152:152:void <clinit>() -> <clinit>
 com.lzy.imagepicker.ui.ImageBaseActivity -> com.lzy.imagepicker.ui.ImageBaseActivity:
     com.lzy.imagepicker.view.SystemBarTintManager tintManager -> u
     20:20:void <init>() -> <init>
@@ -18711,90 +18716,85 @@ com.lzy.imagepicker.ui.ImageCropActivity -> com.lzy.imagepicker.ui.ImageCropActi
     android.graphics.Bitmap mBitmap -> w
     boolean mIsSaveRectangle -> x
     java.util.ArrayList mImageItems -> A
-    22:22:void <init>() -> <init>
-    73:83:int calculateInSampleSize(android.graphics.BitmapFactory$Options,int,int) -> a
-    100:109:void onBitmapSaveSuccess(java.io.File) -> a
-    114:114:void onBitmapSaveError(java.io.File) -> b
-    88:95:void onClick(android.view.View) -> onClick
-    34:70:void onCreate(android.os.Bundle) -> onCreate
-    118:124:void onDestroy() -> onDestroy
+    21:21:void <init>() -> <init>
+    68:78:int calculateInSampleSize(android.graphics.BitmapFactory$Options,int,int) -> a
+    95:104:void onBitmapSaveSuccess(java.io.File) -> a
+    109:109:void onBitmapSaveError(java.io.File) -> b
+    83:90:void onClick(android.view.View) -> onClick
+    33:65:void onCreate(android.os.Bundle) -> onCreate
+    113:119:void onDestroy() -> onDestroy
 com.lzy.imagepicker.ui.ImageGridActivity -> com.lzy.imagepicker.ui.ImageGridActivity:
-    android.view.View mllDir -> y
-    android.widget.Button mBtnOk -> x
-    com.lzy.imagepicker.view.SuperCheckBox mCbOrigin -> H
-    com.lzy.imagepicker.adapter.ImageFolderAdapter mImageFolderAdapter -> B
-    com.lzy.imagepicker.adapter.ImageRecyclerAdapter mRecyclerAdapter -> G
-    android.widget.TextView mtvDir -> z
-    android.view.View mFooterBar -> w
-    androidx.recyclerview.widget.RecyclerView mRecyclerView -> F
-    android.widget.TextView mBtnPre -> A
-    java.util.List mImageFolders -> D
-    boolean directPhoto -> E
-    com.lzy.imagepicker.view.FolderPopUpWindow mFolderPopupWindow -> C
+    android.widget.Button mBtnOk -> y
+    android.view.View mFooterBar -> x
+    android.view.View mllDir -> z
+    com.lzy.imagepicker.adapter.ImageFolderAdapter mImageFolderAdapter -> C
+    boolean isOrigin -> w
+    com.lzy.imagepicker.adapter.ImageRecyclerAdapter mRecyclerAdapter -> H
+    androidx.recyclerview.widget.RecyclerView mRecyclerView -> G
+    android.widget.TextView mtvDir -> A
+    android.widget.TextView mBtnPre -> B
+    java.util.List mImageFolders -> E
+    boolean directPhoto -> F
+    com.lzy.imagepicker.view.FolderPopUpWindow mFolderPopupWindow -> D
     com.lzy.imagepicker.ImagePicker imagePicker -> v
-    40:57:void <init>() -> <init>
-    40:40:com.lzy.imagepicker.ImagePicker access$000(com.lzy.imagepicker.ui.ImageGridActivity) -> a
-    238:252:void onImagesLoaded(java.util.List) -> a
-    256:279:void onImageItemClick(android.view.View,com.lzy.imagepicker.bean.ImageItem,int) -> a
-    284:305:void onImageSelected(int,com.lzy.imagepicker.bean.ImageItem,boolean) -> a
-    40:40:com.lzy.imagepicker.adapter.ImageFolderAdapter access$100(com.lzy.imagepicker.ui.ImageGridActivity) -> b
-    40:40:com.lzy.imagepicker.view.FolderPopUpWindow access$200(com.lzy.imagepicker.ui.ImageGridActivity) -> c
-    40:40:com.lzy.imagepicker.adapter.ImageRecyclerAdapter access$300(com.lzy.imagepicker.ui.ImageGridActivity) -> d
-    40:40:android.widget.TextView access$400(com.lzy.imagepicker.ui.ImageGridActivity) -> e
-    147:153:void checkToCapture() -> o
-    309:347:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    187:216:void onClick(android.view.View) -> onClick
-    76:138:void onCreate(android.os.Bundle) -> onCreate
-    181:183:void onDestroy() -> onDestroy
-    157:177:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
-    64:66:void onRestoreInstanceState(android.os.Bundle) -> onRestoreInstanceState
-    142:144:void onResume() -> onResume
-    70:72:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
-    219:234:void createPopupFolderList() -> p
+    38:56:void <init>() -> <init>
+    38:38:com.lzy.imagepicker.adapter.ImageFolderAdapter access$000(com.lzy.imagepicker.ui.ImageGridActivity) -> a
+    225:239:void onImagesLoaded(java.util.List) -> a
+    243:267:void onImageItemClick(android.view.View,com.lzy.imagepicker.bean.ImageItem,int) -> a
+    272:293:void onImageSelected(int,com.lzy.imagepicker.bean.ImageItem,boolean) -> a
+    38:38:com.lzy.imagepicker.ImagePicker access$100(com.lzy.imagepicker.ui.ImageGridActivity) -> b
+    38:38:com.lzy.imagepicker.view.FolderPopUpWindow access$200(com.lzy.imagepicker.ui.ImageGridActivity) -> c
+    38:38:com.lzy.imagepicker.adapter.ImageRecyclerAdapter access$300(com.lzy.imagepicker.ui.ImageGridActivity) -> d
+    38:38:android.widget.TextView access$400(com.lzy.imagepicker.ui.ImageGridActivity) -> e
+    133:139:void checkToCapture() -> o
+    297:338:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    173:203:void onClick(android.view.View) -> onClick
+    74:130:void onCreate(android.os.Bundle) -> onCreate
+    167:169:void onDestroy() -> onDestroy
+    143:163:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    62:64:void onRestoreInstanceState(android.os.Bundle) -> onRestoreInstanceState
+    68:70:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
+    206:221:void createPopupFolderList() -> p
 com.lzy.imagepicker.ui.ImageGridActivity$1 -> com.lzy.imagepicker.ui.ImageGridActivity$a:
-    com.lzy.imagepicker.ui.ImageGridActivity this$0 -> b
-    132:132:void <init>(com.lzy.imagepicker.ui.ImageGridActivity) -> <init>
-    135:136:void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
-com.lzy.imagepicker.ui.ImageGridActivity$2 -> com.lzy.imagepicker.ui.ImageGridActivity$b:
     com.lzy.imagepicker.ui.ImageGridActivity this$0 -> a
-    220:220:void <init>(com.lzy.imagepicker.ui.ImageGridActivity) -> <init>
-    223:231:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+    207:207:void <init>(com.lzy.imagepicker.ui.ImageGridActivity) -> <init>
+    210:218:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
 com.lzy.imagepicker.ui.ImagePreviewActivity -> com.lzy.imagepicker.ui.ImagePreviewActivity:
-    com.lzy.imagepicker.view.SuperCheckBox mCbCheck -> E
-    android.view.View marginView -> I
-    com.lzy.imagepicker.view.SuperCheckBox mCbOrigin -> F
-    android.view.View bottomBar -> H
-    android.widget.Button mBtnOk -> G
-    22:22:void <init>() -> <init>
-    22:22:com.lzy.imagepicker.view.SuperCheckBox access$000(com.lzy.imagepicker.ui.ImagePreviewActivity) -> a
-    113:118:void onImageSelected(int,com.lzy.imagepicker.bean.ImageItem,boolean) -> a
-    22:22:android.view.View access$100(com.lzy.imagepicker.ui.ImagePreviewActivity) -> b
-    22:22:android.view.View access$200(com.lzy.imagepicker.ui.ImagePreviewActivity) -> c
-    172:185:void onImageSingleTap() -> o
-    149:153:void onBackPressed() -> onBackPressed
-    157:161:void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
-    128:145:void onClick(android.view.View) -> onClick
-    34:109:void onCreate(android.os.Bundle) -> onCreate
-    165:167:void onDestroy() -> onDestroy
-    122:124:void onResume() -> onResume
+    android.view.View bottomBar -> I
+    com.lzy.imagepicker.view.SuperCheckBox mCbCheck -> F
+    android.widget.Button mBtnOk -> H
+    android.view.View marginView -> J
+    com.lzy.imagepicker.view.SuperCheckBox mCbOrigin -> G
+    boolean isOrigin -> E
+    23:23:void <init>() -> <init>
+    23:23:com.lzy.imagepicker.view.SuperCheckBox access$000(com.lzy.imagepicker.ui.ImagePreviewActivity) -> a
+    116:129:void onImageSelected(int,com.lzy.imagepicker.bean.ImageItem,boolean) -> a
+    23:23:android.view.View access$100(com.lzy.imagepicker.ui.ImagePreviewActivity) -> b
+    23:23:android.view.View access$200(com.lzy.imagepicker.ui.ImagePreviewActivity) -> c
+    189:202:void onImageSingleTap() -> o
+    155:160:void onBackPressed() -> onBackPressed
+    164:178:void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+    133:151:void onClick(android.view.View) -> onClick
+    36:112:void onCreate(android.os.Bundle) -> onCreate
+    182:184:void onDestroy() -> onDestroy
 com.lzy.imagepicker.ui.ImagePreviewActivity$1 -> com.lzy.imagepicker.ui.ImagePreviewActivity$a:
     com.lzy.imagepicker.ui.ImagePreviewActivity this$0 -> a
-    56:56:void <init>(com.lzy.imagepicker.ui.ImagePreviewActivity) -> <init>
-    59:64:void onPageSelected(int) -> b
+    59:59:void <init>(com.lzy.imagepicker.ui.ImagePreviewActivity) -> <init>
+    62:67:void onPageSelected(int) -> b
 com.lzy.imagepicker.ui.ImagePreviewActivity$2 -> com.lzy.imagepicker.ui.ImagePreviewActivity$b:
     com.lzy.imagepicker.ui.ImagePreviewActivity this$0 -> b
-    66:66:void <init>(com.lzy.imagepicker.ui.ImagePreviewActivity) -> <init>
-    69:77:void onClick(android.view.View) -> onClick
+    69:69:void <init>(com.lzy.imagepicker.ui.ImagePreviewActivity) -> <init>
+    72:80:void onClick(android.view.View) -> onClick
 com.lzy.imagepicker.ui.ImagePreviewActivity$3 -> com.lzy.imagepicker.ui.ImagePreviewActivity$c:
     com.lzy.imagepicker.ui.ImagePreviewActivity this$0 -> a
-    79:79:void <init>(com.lzy.imagepicker.ui.ImagePreviewActivity) -> <init>
-    82:88:void onNavigationBarShow(int,int) -> a
-    92:93:void onNavigationBarHide(int) -> a
+    82:82:void <init>(com.lzy.imagepicker.ui.ImagePreviewActivity) -> <init>
+    85:91:void onNavigationBarShow(int,int) -> a
+    95:96:void onNavigationBarHide(int) -> a
 com.lzy.imagepicker.ui.ImagePreviewActivity$4 -> com.lzy.imagepicker.ui.ImagePreviewActivity$d:
     com.lzy.imagepicker.ui.ImagePreviewActivity this$0 -> a
-    96:96:void <init>(com.lzy.imagepicker.ui.ImagePreviewActivity) -> <init>
-    99:101:void onNavigationBarShow(int,int) -> a
-    105:107:void onNavigationBarHide(int) -> a
+    99:99:void <init>(com.lzy.imagepicker.ui.ImagePreviewActivity) -> <init>
+    102:104:void onNavigationBarShow(int,int) -> a
+    108:110:void onNavigationBarHide(int) -> a
 com.lzy.imagepicker.ui.ImagePreviewBaseActivity -> com.lzy.imagepicker.ui.ImagePreviewBaseActivity:
     com.lzy.imagepicker.view.ViewPagerFixed mViewPager -> B
     java.util.ArrayList selectedImages -> z
@@ -18840,8 +18840,6 @@ com.lzy.imagepicker.ui.ImagePreviewDelActivity$3 -> com.lzy.imagepicker.ui.Image
     70:78:void onClick(android.content.DialogInterface,int) -> onClick
 com.lzy.imagepicker.util.BitmapUtil -> com.lzy.imagepicker.d.a:
     24:42:int getBitmapDegree(java.lang.String) -> a
-    46:67:int getBitmapDegree(android.content.Context,android.net.Uri) -> a
-    72:89:java.lang.String getDataColumn(android.content.Context,android.net.Uri) -> b
 com.lzy.imagepicker.util.InnerToaster -> com.lzy.imagepicker.d.b:
     android.content.Context mContext -> a
     com.lzy.imagepicker.util.InnerToaster$IToaster mIToaster -> b
@@ -18868,14 +18866,16 @@ com.lzy.imagepicker.util.NavigationBarChangeListener -> com.lzy.imagepicker.d.c:
 com.lzy.imagepicker.util.NavigationBarChangeListener$OnSoftInputStateChangeListener -> com.lzy.imagepicker.d.c$a:
     void onNavigationBarHide(int) -> a
     void onNavigationBarShow(int,int) -> a
-com.lzy.imagepicker.util.Utils -> com.lzy.imagepicker.d.d:
-    32:37:int getImageItemWidth(android.app.Activity) -> a
-    53:53:int dp2px(android.content.Context,float) -> a
-    86:87:int getNavigationBarHeight(android.content.Context) -> a
-    94:94:void innerLog(java.lang.String) -> a
-    19:28:int getStatusHeight(android.content.Context) -> b
-    47:49:android.util.DisplayMetrics getScreenPix(android.app.Activity) -> b
-    57:81:boolean hasVirtualNavigationBar(android.content.Context) -> c
+com.lzy.imagepicker.util.ProviderUtil -> com.lzy.imagepicker.d.d:
+    10:10:java.lang.String getFileProviderName(android.content.Context) -> a
+com.lzy.imagepicker.util.Utils -> com.lzy.imagepicker.d.e:
+    31:36:int getImageItemWidth(android.app.Activity) -> a
+    41:41:boolean existSDCard() -> a
+    52:52:int dp2px(android.content.Context,float) -> a
+    85:86:int getNavigationBarHeight(android.content.Context) -> a
+    18:27:int getStatusHeight(android.content.Context) -> b
+    46:48:android.util.DisplayMetrics getScreenPix(android.app.Activity) -> b
+    56:80:boolean hasVirtualNavigationBar(android.content.Context) -> c
 com.lzy.imagepicker.view.CropImageView -> com.lzy.imagepicker.view.CropImageView:
     87:87:void <clinit>() -> <clinit>
     90:91:void <init>(android.content.Context) -> <init>
@@ -19035,19 +19035,19 @@ com.microastudio.demo.CustomImagePreviewDelActivity -> com.microastudio.demo.Cus
     16:16:int access$600(com.microastudio.demo.CustomImagePreviewDelActivity) -> g
     16:16:java.util.ArrayList access$700(com.microastudio.demo.CustomImagePreviewDelActivity) -> h
     16:16:android.widget.TextView access$800(com.microastudio.demo.CustomImagePreviewDelActivity) -> i
-    88:88:void onImageSingleTap() -> o
-    48:56:void onClick(android.view.View) -> onClick
-    23:37:void onCreate(android.os.Bundle) -> onCreate
-    41:43:void onStart() -> onStart
-    62:82:void showDeleteDialog() -> p
+    36:42:void onClick(android.view.View) -> onClick
+    21:27:void onCreate(android.os.Bundle) -> onCreate
+    31:32:void onStart() -> onStart
+    48:68:void showDeleteDialog() -> p
 com.microastudio.demo.CustomImagePreviewDelActivity$1 -> com.microastudio.demo.CustomImagePreviewDelActivity$a:
     com.microastudio.demo.CustomImagePreviewDelActivity this$0 -> b
-    67:67:void <init>(com.microastudio.demo.CustomImagePreviewDelActivity) -> <init>
-    71:79:void onClick(android.content.DialogInterface,int) -> onClick
+    53:53:void <init>(com.microastudio.demo.CustomImagePreviewDelActivity) -> <init>
+    57:65:void onClick(android.content.DialogInterface,int) -> onClick
 com.microastudio.demo.GlideImageLoader -> com.microastudio.demo.GlideImageLoader:
     17:17:void <init>() -> <init>
-    34:34:void clearMemoryCache() -> clearMemoryCache
-    20:29:void displayImage(android.app.Activity,android.net.Uri,android.widget.ImageView,int,int) -> displayImage
+    48:48:void clearMemoryCache() -> clearMemoryCache
+    30:36:void displayImage(android.app.Activity,java.lang.String,android.widget.ImageView,int,int) -> displayImage
+    40:44:void displayImagePreview(android.app.Activity,java.lang.String,android.widget.ImageView,int,int) -> displayImagePreview
 com.microastudio.demo.ImagePickerLoader -> com.microastudio.demo.a:
     14:14:void <init>() -> <init>
     17:18:void displayNineGridImage(android.content.Context,java.lang.String,android.widget.ImageView) -> a
@@ -19055,46 +19055,47 @@ com.microastudio.demo.ImagePickerLoader -> com.microastudio.demo.a:
 com.microastudio.demo.MainActivity -> com.microastudio.demo.MainActivity:
     com.microastudio.widget.photo.NineGridView mNineGridView -> v
     java.util.List selImageList -> u
-    29:29:void <init>() -> <init>
-    124:125:void onNineGirdItemDeleted(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> a
-    93:96:void onNineGirdAddMoreClick(int) -> b
-    107:119:void onNineGirdItemClick(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> b
-    74:83:void initImagePicker() -> o
-    129:146:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    java.util.ArrayList images -> w
+    27:116:void <init>() -> <init>
+    113:114:void onNineGirdItemDeleted(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> a
+    93:98:void onNineGirdAddMoreClick(int) -> b
+    103:108:void onNineGirdItemClick(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> b
+    72:83:void initImagePicker() -> o
+    120:137:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
     87:88:void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
-    35:42:void onCreate(android.os.Bundle) -> onCreate
-    45:71:void initNineGridView() -> p
+    33:40:void onCreate(android.os.Bundle) -> onCreate
+    43:69:void initNineGridView() -> p
 com.microastudio.demo.R$anim -> com.microastudio.demo.R$anim:
     11:11:void <init>() -> <init>
 com.microastudio.demo.R$attr -> com.microastudio.demo.R$attr:
     43:43:void <init>() -> <init>
 com.microastudio.demo.R$bool -> com.microastudio.demo.R$bool:
-    2574:2574:void <init>() -> <init>
+    3026:3026:void <init>() -> <init>
 com.microastudio.demo.R$color -> com.microastudio.demo.R$color:
-    2579:2579:void <init>() -> <init>
+    3031:3031:void <init>() -> <init>
 com.microastudio.demo.R$dimen -> com.microastudio.demo.R$dimen:
-    2684:2684:void <init>() -> <init>
+    3136:3136:void <init>() -> <init>
 com.microastudio.demo.R$drawable -> com.microastudio.demo.R$drawable:
-    2815:2815:void <init>() -> <init>
+    3267:3267:void <init>() -> <init>
 com.microastudio.demo.R$id -> com.microastudio.demo.R$id:
-    2946:2946:void <init>() -> <init>
+    3398:3398:void <init>() -> <init>
 com.microastudio.demo.R$integer -> com.microastudio.demo.R$integer:
-    3180:3180:void <init>() -> <init>
+    3632:3632:void <init>() -> <init>
 com.microastudio.demo.R$interpolator -> com.microastudio.demo.R$interpolator:
-    3187:3187:void <init>() -> <init>
+    3639:3639:void <init>() -> <init>
 com.microastudio.demo.R$layout -> com.microastudio.demo.R$layout:
-    3196:3196:void <init>() -> <init>
+    3648:3648:void <init>() -> <init>
 com.microastudio.demo.R$mipmap -> com.microastudio.demo.R$mipmap:
-    3258:3258:void <init>() -> <init>
+    3710:3710:void <init>() -> <init>
 com.microastudio.demo.R$string -> com.microastudio.demo.R$string:
-    3265:3265:void <init>() -> <init>
+    3717:3717:void <init>() -> <init>
 com.microastudio.demo.R$style -> com.microastudio.demo.R$style:
-    3322:3322:void <init>() -> <init>
+    3774:3774:void <init>() -> <init>
 com.microastudio.demo.R$styleable -> com.microastudio.demo.R$styleable:
-    3752:11195:void <clinit>() -> <clinit>
-    3684:3684:void <init>() -> <init>
+    4208:12317:void <clinit>() -> <clinit>
+    4136:4136:void <init>() -> <init>
 com.microastudio.demo.R$xml -> com.microastudio.demo.R$xml:
-    11464:11464:void <init>() -> <init>
+    12586:12586:void <init>() -> <init>
 com.microastudio.ninegridview.R$attr -> com.microastudio.ninegridview.R$attr:
     13:13:void <init>() -> <init>
 com.microastudio.ninegridview.R$drawable -> com.microastudio.ninegridview.R$drawable:
