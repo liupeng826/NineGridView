@@ -34,7 +34,8 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.github.bumptech.glide:glide:4.10.0'
-    implementation 'com.lwkandroid:ImagePicker:1.4.3'
+    implementation 'com.cysion:ImagePicker:1.2.0.Q'
     implementation project(':photolib')
 }

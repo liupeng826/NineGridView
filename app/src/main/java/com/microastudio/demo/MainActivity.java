@@ -1,17 +1,19 @@
 package com.microastudio.demo;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.lwkandroid.imagepicker.ImagePicker;
-import com.lwkandroid.imagepicker.data.ImageBean;
-import com.lwkandroid.imagepicker.data.ImagePickType;
+import com.lzy.imagepicker.ImagePicker;
+import com.lzy.imagepicker.bean.ImageItem;
+import com.lzy.imagepicker.ui.ImageGridActivity;
+import com.lzy.imagepicker.ui.ImagePreviewDelActivity;
+import com.lzy.imagepicker.view.CropImageView;
 import com.microastudio.widget.photo.NineGirdImageContainer;
 import com.microastudio.widget.photo.NineGridBean;
 import com.microastudio.widget.photo.NineGridView;
@@ -19,8 +21,13 @@ import com.microastudio.widget.photo.NineGridView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.microastudio.demo.Constants.REQUEST_CODE_PREVIEW;
+
+/**
+ * @author peng
+ */
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, NineGridView.onItemClickListener {
-    private final int REQUEST_CODE_PICKER = 100;
+    private List<ImageItem> selImageList;
     private NineGridView mNineGridView;
 
     @Override
@@ -28,12 +35,19 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initImagePicker();
+        initNineGridView();
+
+        selImageList = new ArrayList<>();
+    }
+
+    private void initNineGridView() {
         CheckBox checkBox = (CheckBox) findViewById(R.id.ck_main_is_edit_mode);
         checkBox.setOnCheckedChangeListener(this);
 
         mNineGridView = (NineGridView) findViewById(R.id.ngv_demo);
         //设置图片加载器，这个是必须的，不然图片无法显示
-        mNineGridView.setImageLoader(new GlideImageLoader());
+        mNineGridView.setImageLoader(new ImagePickerLoader());
         //设置显示列数，默认3列
         mNineGridView.setColumnCount(4);
         //设置是否为编辑模式，默认为false
@@ -56,6 +70,18 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         mNineGridView.setOnItemClickListener(this);
     }
 
+    private void initImagePicker() {
+        ImagePicker imagePicker = ImagePicker.getInstance();
+        imagePicker.setImageLoader(new GlideImageLoader());    //设置图片加载器
+        imagePicker.setShowCamera(true);                       //显示拍照按钮
+        imagePicker.setCrop(false);                            //允许裁剪（单选才有效）
+        imagePicker.setSaveRectangle(false);                   //是否按矩形区域保存
+        imagePicker.setSelectLimit(Constants.MAX_PHOTO_COUNT); //选中数量限制
+        imagePicker.setStyle(CropImageView.Style.RECTANGLE);   //裁剪框的形状
+        imagePicker.setOutPutX(1000);                          //保存文件的宽度。单位像素
+        imagePicker.setOutPutY(1000);                          //保存文件的高度。单位像素
+    }
+
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         mNineGridView.setIsEditMode(b);
@@ -64,18 +90,32 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     @Override
     public void onNineGirdAddMoreClick(int dValue) {
         //编辑模式下，图片展示数量尚未达到最大数量时，会显示一个“+”号，点击后回调这里
-        new ImagePicker()
-                .cachePath(Environment.getExternalStorageDirectory().getAbsolutePath())
-                .pickType(ImagePickType.MULTI)
-                .displayer(new ImagePickerLoader())
-                .maxNum(dValue)
-                .start(this, REQUEST_CODE_PICKER);
+        ImagePicker.getInstance().setSelectLimit(Constants.MAX_PHOTO_COUNT - selImageList.size());
+        Intent intent1 = new Intent(MainActivity.this, ImageGridActivity.class);
+        startActivityForResult(intent1, Constants.REQUEST_IMAGE_PICKER);
     }
 
     @Override
     public void onNineGirdItemClick(int position, NineGridBean gridBean, NineGirdImageContainer imageContainer) {
-        //点击图片的监听
-        Toast.makeText(this, "点击position=" + position + "图片", Toast.LENGTH_SHORT).show();
+//        //点击图片的监听
+//        Intent intent = new Intent(this, CustomImagePreviewDelActivity.class);
+//        intent.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, (ArrayList<ImageItem>) selImageList);
+//        intent.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, position);
+//        intent.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
+//        startActivityForResult(intent, REQUEST_CODE_PREVIEW);
+
+        List<ImageItem> resultList = new ArrayList<>();
+        for (NineGridBean imageBean : mNineGridView.getDataList()) {
+            ImageItem imageItem = new ImageItem();
+            imageItem.uri = Uri.parse(imageBean.getOriginUrl());
+            resultList.add(imageItem);
+        }
+        //打开预览
+        Intent intentPreview = new Intent(this, ImagePreviewDelActivity.class);
+        intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, (ArrayList<ImageItem>) resultList);
+        intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, position);
+        intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
+        startActivityForResult(intentPreview, REQUEST_CODE_PREVIEW);
     }
 
     @Override
@@ -87,11 +127,18 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CODE_PICKER && resultCode == RESULT_OK && data != null) {
-            List<ImageBean> list = data.getParcelableArrayListExtra(ImagePicker.INTENT_RESULT_DATA);
+
+        if (requestCode == Constants.REQUEST_IMAGE_PICKER
+                && resultCode == ImagePicker.RESULT_CODE_ITEMS
+                && data != null) {
+            List<ImageItem> list = (ArrayList<ImageItem>) data.getSerializableExtra(ImagePicker.EXTRA_RESULT_ITEMS);
+            if (list != null) {
+                selImageList.addAll(list);
+            }
+
             List<NineGridBean> resultList = new ArrayList<>();
-            for (ImageBean imageBean : list) {
-                NineGridBean nineGirdData = new NineGridBean(imageBean.getImagePath());
+            for (ImageItem imageBean : selImageList) {
+                NineGridBean nineGirdData = new NineGridBean(imageBean.uri.toString());
                 resultList.add(nineGirdData);
             }
             mNineGridView.addDataList(resultList);

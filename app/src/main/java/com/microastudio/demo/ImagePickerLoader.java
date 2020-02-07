@@ -4,37 +4,23 @@ import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
-import com.lwkandroid.imagepicker.utils.IImagePickerDisplayer;
+import com.microastudio.widget.photo.INineGridImageLoader;
 
 /**
- * Created by LWK
- * TODO
+ * @author peng
  */
 
-public class ImagePickerLoader implements IImagePickerDisplayer {
+public class ImagePickerLoader implements INineGridImageLoader {
     @Override
-    public void display(Context context, String url, ImageView imageView, int maxWidth, int maxHeight) {
-        Glide.with(context)
-                .asBitmap()
-                .load(url)
-                .apply(new RequestOptions()
-                        .override(maxWidth, maxHeight)
-                        .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC))
-                .into(imageView);
+    public void displayNineGridImage(Context context, String url, ImageView imageView) {
+        Glide.with(context).load(url).into(imageView);
     }
 
     @Override
-    public void display(Context context, String url, ImageView imageView, int placeHolder, int errorHolder, int maxWidth, int maxHeight) {
-        Glide.with(context)
-                .asBitmap()
-                .load(url)
-                .apply(new RequestOptions()
-                        .placeholder(placeHolder)
-                        .error(errorHolder)
-                        .override(maxWidth, maxHeight)
-                        .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC))
+    public void displayNineGridImage(Context context, String url, ImageView imageView, int width, int height) {
+        Glide.with(context).load(url)
+                .apply(new RequestOptions().override(width, height))
                 .into(imageView);
     }
 }
