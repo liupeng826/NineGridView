@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 1.5.69
 # min_api: 14
-# pg_map_id: 267fcbd
+# pg_map_id: 611d292
 android.support.v4.app.INotificationSideChannel$Stub -> android.support.v4.app.INotificationSideChannel$Stub:
     20:22:void <init>() -> <init>
     40:40:android.os.IBinder asBinder() -> asBinder
@@ -19055,47 +19055,49 @@ com.microastudio.demo.ImagePickerLoader -> com.microastudio.demo.a:
 com.microastudio.demo.MainActivity -> com.microastudio.demo.MainActivity:
     com.microastudio.widget.photo.NineGridView mNineGridView -> v
     java.util.List selImageList -> u
-    java.util.ArrayList images -> w
-    27:116:void <init>() -> <init>
-    113:114:void onNineGirdItemDeleted(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> a
-    93:98:void onNineGirdAddMoreClick(int) -> b
-    103:108:void onNineGirdItemClick(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> b
-    72:83:void initImagePicker() -> o
-    120:137:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    87:88:void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+    java.util.ArrayList images -> x
+    android.widget.CheckBox checkBox -> w
+    26:125:void <init>() -> <init>
+    122:123:void onNineGirdItemDeleted(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> a
+    94:99:void onNineGirdAddMoreClick(int) -> b
+    104:109:void onNineGirdItemClick(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> b
+    115:117:void onNineGirdItemLongClick(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> c
+    73:84:void initImagePicker() -> o
+    129:146:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    88:89:void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
     33:40:void onCreate(android.os.Bundle) -> onCreate
-    43:69:void initNineGridView() -> p
+    43:70:void initNineGridView() -> p
 com.microastudio.demo.R$anim -> com.microastudio.demo.R$anim:
     11:11:void <init>() -> <init>
 com.microastudio.demo.R$attr -> com.microastudio.demo.R$attr:
     43:43:void <init>() -> <init>
 com.microastudio.demo.R$bool -> com.microastudio.demo.R$bool:
-    2574:2574:void <init>() -> <init>
+    3026:3026:void <init>() -> <init>
 com.microastudio.demo.R$color -> com.microastudio.demo.R$color:
-    2579:2579:void <init>() -> <init>
+    3031:3031:void <init>() -> <init>
 com.microastudio.demo.R$dimen -> com.microastudio.demo.R$dimen:
-    2684:2684:void <init>() -> <init>
+    3136:3136:void <init>() -> <init>
 com.microastudio.demo.R$drawable -> com.microastudio.demo.R$drawable:
-    2815:2815:void <init>() -> <init>
+    3267:3267:void <init>() -> <init>
 com.microastudio.demo.R$id -> com.microastudio.demo.R$id:
-    2946:2946:void <init>() -> <init>
+    3398:3398:void <init>() -> <init>
 com.microastudio.demo.R$integer -> com.microastudio.demo.R$integer:
-    3180:3180:void <init>() -> <init>
+    3632:3632:void <init>() -> <init>
 com.microastudio.demo.R$interpolator -> com.microastudio.demo.R$interpolator:
-    3187:3187:void <init>() -> <init>
+    3639:3639:void <init>() -> <init>
 com.microastudio.demo.R$layout -> com.microastudio.demo.R$layout:
-    3196:3196:void <init>() -> <init>
+    3648:3648:void <init>() -> <init>
 com.microastudio.demo.R$mipmap -> com.microastudio.demo.R$mipmap:
-    3258:3258:void <init>() -> <init>
+    3710:3710:void <init>() -> <init>
 com.microastudio.demo.R$string -> com.microastudio.demo.R$string:
-    3265:3265:void <init>() -> <init>
+    3717:3717:void <init>() -> <init>
 com.microastudio.demo.R$style -> com.microastudio.demo.R$style:
-    3322:3322:void <init>() -> <init>
+    3774:3774:void <init>() -> <init>
 com.microastudio.demo.R$styleable -> com.microastudio.demo.R$styleable:
-    3752:11195:void <clinit>() -> <clinit>
-    3684:3684:void <init>() -> <init>
+    4208:12317:void <clinit>() -> <clinit>
+    4136:4136:void <init>() -> <init>
 com.microastudio.demo.R$xml -> com.microastudio.demo.R$xml:
-    11464:11464:void <init>() -> <init>
+    12586:12586:void <init>() -> <init>
 com.microastudio.ninegridview.R$attr -> com.microastudio.ninegridview.R$attr:
     13:13:void <init>() -> <init>
 com.microastudio.ninegridview.R$drawable -> com.microastudio.ninegridview.R$drawable:
@@ -19155,63 +19157,72 @@ com.microastudio.widget.photo.NineGridImageView -> com.microastudio.widget.photo
     20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     26:37:boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
 com.microastudio.widget.photo.NineGridView -> com.microastudio.widget.photo.NineGridView:
-    58:60:void <init>(android.content.Context) -> <init>
-    63:65:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    60:62:void <init>(android.content.Context) -> <init>
+    65:67:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     25:25:java.util.List access$000(com.microastudio.widget.photo.NineGridView) -> access$000
     25:25:void access$100(com.microastudio.widget.photo.NineGridView) -> access$100
     25:25:void access$200(com.microastudio.widget.photo.NineGridView) -> access$200
     25:25:void access$300(com.microastudio.widget.photo.NineGridView) -> access$300
     25:25:com.microastudio.widget.photo.NineGridView$onItemClickListener access$400(com.microastudio.widget.photo.NineGridView) -> access$400
-    25:25:com.microastudio.widget.photo.INineGridImageLoader access$500(com.microastudio.widget.photo.NineGridView) -> access$500
-    208:223:void addDataList(java.util.List) -> addDataList
-    227:245:void calRawAndColumn() -> calRawAndColumn
-    355:355:boolean canShowAddMore() -> canShowAddMore
-    411:416:void clearAllViews() -> clearAllViews
-    422:422:java.util.List getDataList() -> getDataList
-    454:454:int getDiffValue() -> getDiffValue
-    250:306:void initChildViews() -> initChildViews
-    68:99:void initParams(android.content.Context,android.util.AttributeSet) -> initParams
-    181:183:void onFinishInflate() -> onFinishInflate
-    166:177:void onLayout(boolean,int,int,int,int) -> onLayout
-    103:162:void onMeasure(int,int) -> onMeasure
-    514:532:void onRestoreInstanceState(android.os.Parcelable) -> onRestoreInstanceState
-    497:509:android.os.Parcelable onSaveInstanceState() -> onSaveInstanceState
-    369:370:void setColumnCount(int) -> setColumnCount
-    189:202:void setDataList(java.util.List) -> setDataList
-    429:433:void setIcAddMoreResId(int) -> setIcAddMoreResId
-    439:448:void setIcDeleteResId(int) -> setIcDeleteResId
-    362:363:void setImageLoader(com.microastudio.widget.photo.INineGridImageLoader) -> setImageLoader
-    312:351:void setIsEditMode(boolean) -> setIsEditMode
-    383:384:void setMaxNum(int) -> setMaxNum
-    461:462:void setOnItemClickListener(com.microastudio.widget.photo.NineGridView$onItemClickListener) -> setOnItemClickListener
-    376:377:void setRatioOfDeleteIcon(float) -> setRatioOfDeleteIcon
-    406:407:void setSingleImageRatio(float) -> setSingleImageRatio
-    398:400:void setSingleImageSize(int) -> setSingleImageSize
-    390:392:void setSpcaeSize(int) -> setSpcaeSize
+    25:25:com.microastudio.widget.photo.NineGridView$onItemLongClickListener access$500(com.microastudio.widget.photo.NineGridView) -> access$500
+    25:25:com.microastudio.widget.photo.INineGridImageLoader access$600(com.microastudio.widget.photo.NineGridView) -> access$600
+    210:225:void addDataList(java.util.List) -> addDataList
+    229:247:void calRawAndColumn() -> calRawAndColumn
+    367:367:boolean canShowAddMore() -> canShowAddMore
+    423:428:void clearAllViews() -> clearAllViews
+    434:434:java.util.List getDataList() -> getDataList
+    466:466:int getDiffValue() -> getDiffValue
+    252:318:void initChildViews() -> initChildViews
+    70:101:void initParams(android.content.Context,android.util.AttributeSet) -> initParams
+    183:185:void onFinishInflate() -> onFinishInflate
+    168:179:void onLayout(boolean,int,int,int,int) -> onLayout
+    105:164:void onMeasure(int,int) -> onMeasure
+    544:562:void onRestoreInstanceState(android.os.Parcelable) -> onRestoreInstanceState
+    527:539:android.os.Parcelable onSaveInstanceState() -> onSaveInstanceState
+    381:382:void setColumnCount(int) -> setColumnCount
+    191:204:void setDataList(java.util.List) -> setDataList
+    441:445:void setIcAddMoreResId(int) -> setIcAddMoreResId
+    451:460:void setIcDeleteResId(int) -> setIcDeleteResId
+    374:375:void setImageLoader(com.microastudio.widget.photo.INineGridImageLoader) -> setImageLoader
+    324:363:void setIsEditMode(boolean) -> setIsEditMode
+    395:396:void setMaxNum(int) -> setMaxNum
+    473:474:void setOnItemClickListener(com.microastudio.widget.photo.NineGridView$onItemClickListener) -> setOnItemClickListener
+    507:508:void setOnItemLongClickListener(com.microastudio.widget.photo.NineGridView$onItemLongClickListener) -> setOnItemLongClickListener
+    388:389:void setRatioOfDeleteIcon(float) -> setRatioOfDeleteIcon
+    418:419:void setSingleImageRatio(float) -> setSingleImageRatio
+    410:412:void setSingleImageSize(int) -> setSingleImageSize
+    402:404:void setSpaceSize(int) -> setSpaceSize
 com.microastudio.widget.photo.NineGridView$1 -> com.microastudio.widget.photo.NineGridView$a:
     com.microastudio.widget.photo.NineGirdImageContainer val$imageContainer -> c
     com.microastudio.widget.photo.NineGridView this$0 -> d
     int val$position -> a
     com.microastudio.widget.photo.NineGridBean val$gridBean -> b
-    263:263:void <init>(com.microastudio.widget.photo.NineGridView,int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> <init>
-    266:274:void onClickDelete() -> a
+    265:265:void <init>(com.microastudio.widget.photo.NineGridView,int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> <init>
+    268:276:void onClickDelete() -> a
 com.microastudio.widget.photo.NineGridView$2 -> com.microastudio.widget.photo.NineGridView$b:
     com.microastudio.widget.photo.NineGirdImageContainer val$imageContainer -> d
     com.microastudio.widget.photo.NineGridView this$0 -> e
     int val$position -> b
     com.microastudio.widget.photo.NineGridBean val$gridBean -> c
-    276:276:void <init>(com.microastudio.widget.photo.NineGridView,int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> <init>
-    279:282:void onClick(android.view.View) -> onClick
+    278:278:void <init>(com.microastudio.widget.photo.NineGridView,int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> <init>
+    281:284:void onClick(android.view.View) -> onClick
 com.microastudio.widget.photo.NineGridView$3 -> com.microastudio.widget.photo.NineGridView$c:
+    com.microastudio.widget.photo.NineGirdImageContainer val$imageContainer -> d
+    com.microastudio.widget.photo.NineGridView this$0 -> e
+    int val$position -> b
+    com.microastudio.widget.photo.NineGridBean val$gridBean -> c
+    286:286:void <init>(com.microastudio.widget.photo.NineGridView,int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> <init>
+    289:293:boolean onLongClick(android.view.View) -> onLongClick
+com.microastudio.widget.photo.NineGridView$4 -> com.microastudio.widget.photo.NineGridView$d:
     com.microastudio.widget.photo.NineGirdImageContainer val$imageContainer -> c
     com.microastudio.widget.photo.NineGridView this$0 -> d
     com.microastudio.widget.photo.NineGridBean val$gridBean -> b
-    286:286:void <init>(com.microastudio.widget.photo.NineGridView,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> <init>
-    289:301:void run() -> run
-com.microastudio.widget.photo.NineGridView$4 -> com.microastudio.widget.photo.NineGridView$d:
+    298:298:void <init>(com.microastudio.widget.photo.NineGridView,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> <init>
+    301:313:void run() -> run
+com.microastudio.widget.photo.NineGridView$5 -> com.microastudio.widget.photo.NineGridView$e:
     com.microastudio.widget.photo.NineGridView this$0 -> b
-    333:333:void <init>(com.microastudio.widget.photo.NineGridView) -> <init>
-    336:339:void onClick(android.view.View) -> onClick
+    345:345:void <init>(com.microastudio.widget.photo.NineGridView) -> <init>
+    348:351:void onClick(android.view.View) -> onClick
 com.microastudio.widget.photo.NineGridView$SavedViewState -> com.microastudio.widget.photo.NineGridView$SavedViewState:
     float ratioDelete -> l
     int icDeleteResId -> k
@@ -19224,18 +19235,20 @@ com.microastudio.widget.photo.NineGridView$SavedViewState -> com.microastudio.wi
     int columnCount -> e
     boolean isEditMode -> h
     int singleImageSize -> b
-    582:582:void <clinit>() -> <clinit>
-    534:534:void <init>(android.os.Parcel,com.microastudio.widget.photo.NineGridView$1) -> <init>
-    548:549:void <init>(android.os.Parcelable) -> <init>
-    552:564:void <init>(android.os.Parcel) -> <init>
-    568:580:void writeToParcel(android.os.Parcel,int) -> writeToParcel
+    612:612:void <clinit>() -> <clinit>
+    564:564:void <init>(android.os.Parcel,com.microastudio.widget.photo.NineGridView$1) -> <init>
+    578:579:void <init>(android.os.Parcelable) -> <init>
+    582:594:void <init>(android.os.Parcel) -> <init>
+    598:610:void writeToParcel(android.os.Parcel,int) -> writeToParcel
 com.microastudio.widget.photo.NineGridView$SavedViewState$1 -> com.microastudio.widget.photo.NineGridView$SavedViewState$a:
-    582:582:void <init>() -> <init>
-    582:582:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-    585:585:com.microastudio.widget.photo.NineGridView$SavedViewState createFromParcel(android.os.Parcel) -> createFromParcel
-    582:582:java.lang.Object[] newArray(int) -> newArray
-    590:590:com.microastudio.widget.photo.NineGridView$SavedViewState[] newArray(int) -> newArray
-com.microastudio.widget.photo.NineGridView$onItemClickListener -> com.microastudio.widget.photo.NineGridView$e:
+    612:612:void <init>() -> <init>
+    612:612:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+    615:615:com.microastudio.widget.photo.NineGridView$SavedViewState createFromParcel(android.os.Parcel) -> createFromParcel
+    612:612:java.lang.Object[] newArray(int) -> newArray
+    620:620:com.microastudio.widget.photo.NineGridView$SavedViewState[] newArray(int) -> newArray
+com.microastudio.widget.photo.NineGridView$onItemClickListener -> com.microastudio.widget.photo.NineGridView$f:
     void onNineGirdItemDeleted(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> a
     void onNineGirdAddMoreClick(int) -> b
     void onNineGirdItemClick(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> b
+com.microastudio.widget.photo.NineGridView$onItemLongClickListener -> com.microastudio.widget.photo.NineGridView$g:
+    void onNineGirdItemLongClick(int,com.microastudio.widget.photo.NineGridBean,com.microastudio.widget.photo.NineGirdImageContainer) -> c

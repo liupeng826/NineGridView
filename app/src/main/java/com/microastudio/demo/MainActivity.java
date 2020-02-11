@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,9 +23,10 @@ import static com.microastudio.demo.Constants.REQUEST_CODE_PREVIEW;
 /**
  * @author peng
  */
-public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, NineGridView.onItemClickListener {
+public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener, NineGridView.onItemClickListener, NineGridView.onItemLongClickListener {
     private List<ImageItem> selImageList;
     private NineGridView mNineGridView;
+    private CheckBox checkBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     }
 
     private void initNineGridView() {
-        CheckBox checkBox = (CheckBox) findViewById(R.id.ck_main_is_edit_mode);
+        checkBox = (CheckBox) findViewById(R.id.ck_main_is_edit_mode);
         checkBox.setOnCheckedChangeListener(this);
 
         mNineGridView = (NineGridView) findViewById(R.id.ngv_demo);
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         //设置最大显示数量，默认9张
         mNineGridView.setMaxNum(16);
         //设置图片显示间隔大小，默认3dp
-        mNineGridView.setSpcaeSize(4);
+        mNineGridView.setSpaceSize(4);
         //设置删除图片
         mNineGridView.setIcDeleteResId(R.drawable.ic_delete);
         //设置删除图片与父视图的大小比例，默认0.25f
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         mNineGridView.setIcAddMoreResId(R.drawable.ic_plus);
         //设置各类点击监听
         mNineGridView.setOnItemClickListener(this);
+        mNineGridView.setOnItemLongClickListener(this);
     }
 
     private void initImagePicker() {
@@ -105,6 +106,14 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, position);
         intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
         startActivityForResult(intentPreview, REQUEST_CODE_PREVIEW);
+    }
+
+    @Override
+    public void onNineGirdItemLongClick(int position, NineGridBean gridBean, NineGirdImageContainer imageContainer) {
+        //长按图片的监听 - 打开编辑模式
+
+        checkBox.setChecked(true);
+        mNineGridView.setIsEditMode(true);
     }
 
     @Override

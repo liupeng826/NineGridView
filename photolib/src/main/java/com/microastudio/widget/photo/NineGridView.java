@@ -43,6 +43,8 @@ public class NineGridView extends ViewGroup {
     private NineGridImageView mImgAddData;
     //child view click listener
     private onItemClickListener mListener;
+    //child view long click listener
+    private onItemLongClickListener mLongClickListener;
     //weather is in edit mode
     private boolean mIsEditMode;
     //Maximum of image
@@ -281,6 +283,16 @@ public class NineGridView extends ViewGroup {
                     }
                 }
             });
+            imageContainer.getImageView().setOnLongClickListener(new OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    if (mLongClickListener != null) {
+                        mLongClickListener.onNineGirdItemLongClick(position, gridBean, imageContainer);
+                        return true;
+                    }
+                    return false;
+                }
+            });
             addView(imageContainer, position);
 
             imageContainer.post(new Runnable() {
@@ -386,13 +398,13 @@ public class NineGridView extends ViewGroup {
     /**
      * Set the space size, dip unit
      */
-    public void setSpcaeSize(int dpValue) {
+    public void setSpaceSize(int dpValue) {
         this.mSpaceSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue
                 , getContext().getResources().getDisplayMetrics());
     }
 
     /**
-     * Set the size of imageview while there has only one image, dip unit
+     * Set the size of imageView while there has only one image, dip unit
      */
     public void setSingleImageSize(int dpValue) {
         this.mSingleImageSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue
@@ -400,7 +412,7 @@ public class NineGridView extends ViewGroup {
     }
 
     /**
-     * Set the aspect ratio of only one imageview
+     * Set the aspect ratio of only one imageView
      */
     public void setSingleImageRatio(float ratio) {
         this.mSingleImageRatio = ratio;
@@ -463,7 +475,7 @@ public class NineGridView extends ViewGroup {
 
     public interface onItemClickListener {
         /**
-         * Callback when clcik plus button be clicked
+         * Callback when click plus button be clicked
          *
          * @param dValue the diff value between current data number displayed and maximum number
          */
@@ -486,6 +498,24 @@ public class NineGridView extends ViewGroup {
          * @param imageContainer image container of image be clicked
          */
         void onNineGirdItemDeleted(int position, NineGridBean gridBean, NineGirdImageContainer imageContainer);
+    }
+
+    /**
+     * Set up child view click listener
+     */
+    public void setOnItemLongClickListener(onItemLongClickListener l) {
+        this.mLongClickListener = l;
+    }
+
+    public interface onItemLongClickListener {
+        /**
+         * Callback when image be long clicked
+         *
+         * @param position       position,started with 0
+         * @param gridBean       data of image be clicked
+         * @param imageContainer image container of image be clicked
+         */
+        void onNineGirdItemLongClick(int position, NineGridBean gridBean, NineGirdImageContainer imageContainer);
     }
 
     /*****************************************************
